@@ -1,0 +1,112 @@
+/* packages/foundations/css/menu.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+.menu-anchor {
+  position: relative;
+  display: inline-block;
+}
+
+
+.menu-list {
+  position: absolute;
+  top: calc(100% + var(--neo-space-sm-rem));
+  left: 0;
+  width: 100%;
+  min-width: 200px;
+  z-index: 10;
+  list-style: none;
+  margin: 0;
+  padding-block: 0;
+  padding-inline: 0;
+  background: var(--surface--base--default);
+  border: var(--neo-stroke-xs) solid var(--border--base--secondary);
+  border-radius: var(--neo-radius-sm);
+  box-shadow: var(--neo-elevation-md);
+  overflow: hidden;
+}
+
+.menu-list--scroll {
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.menu-list--scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.menu-list--scroll::-webkit-scrollbar-track {
+  background: var(--fill--base--default);
+  border-radius: var(--neo-radius-pill);
+}
+.menu-list--scroll::-webkit-scrollbar-thumb {
+  background: var(--fill--base--medium);
+  border-radius: var(--neo-radius-pill);
+}
+
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: var(--neo-space-md-rem);
+  min-height: 40px;
+  padding-block: var(--neo-space-sm-rem);
+  padding-inline: var(--neo-space-lg-rem);
+  background: var(--fill--tertiary--default);
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background: var(--fill--tertiary--hover);
+}
+
+.menu-item:focus-visible {
+  outline: none;
+  border-radius: calc(var(--neo-radius-sm) - var(--neo-stroke-xs));
+  box-shadow:
+    inset 0 0 0 var(--neo-stroke-focus-ring-width) var(--focus--ring--default),
+    inset 0 0 0 calc(var(--neo-stroke-focus-ring-width) * 2) var(--focus--gap--default);
+}
+
+.menu-item--active {
+  background: var(--fill--tertiary--active);
+}
+
+.menu-item--disabled {
+  background: var(--fill--base--disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.menu-item__label {
+  flex: 1;
+  font-size: var(--neo-type-body-lg-regular-size-rem);
+  font-weight: var(--neo-type-body-lg-regular-weight);
+  line-height: var(--neo-type-body-lg-regular-line-height-rem);
+  color: var(--text--base--default);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.menu-item--disabled .menu-item__label {
+  color: var(--text--base--disabled);
+}
+
+.menu-item__icon {
+  flex-shrink: 0;
+  width: var(--neo-icon-size-md-rem);
+  height: var(--neo-icon-size-md-rem);
+  fill: var(--icon--base--default);
+  color: var(--icon--base--default);
+}
+
+.menu-item--disabled .menu-item__icon {
+  fill: var(--icon--base--disabled);
+  color: var(--icon--base--disabled);
+}
+
+
+.menu-divider {
+  height: var(--neo-stroke-xs);
+  margin: 0;
+  border: none;
+  background: var(--border--base--secondary);
+}

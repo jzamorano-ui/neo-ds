@@ -1,0 +1,35 @@
+{
+  "name": "@neo/mui",
+  "version": "1.0.0-rc.3",
+  "description": "Neo — the Material UI theme and the Neo* React components, on top of @neo/foundations.",
+  "type": "module",
+  "types": "./ui/index.d.ts",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./ui/index.d.ts",
+      "default": "./ui/index.mjs"
+    },
+    "./theme": {
+      "types": "./theme/index.d.ts",
+      "default": "./theme/index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "ui",
+    "theme"
+  ],
+  "dependencies": {
+    "@neo/foundations": "1.0.0-rc.3"
+  },
+  "peerDependencies": {
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "@mui/material": ">=5.18.0 <7",
+    "react": "^18 || ^19"
+  },
+  "license": "UNLICENSED"
+}

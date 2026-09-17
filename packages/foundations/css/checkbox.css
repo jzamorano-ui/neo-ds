@@ -1,0 +1,112 @@
+/* packages/foundations/css/checkbox.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  cursor: pointer;
+  min-height: 2.75rem;
+}
+
+.checkbox__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+}
+
+.checkbox__wrapper input[type="checkbox"] {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox__control {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: var(--neo-radius-xs);
+  border: var(--neo-stroke-xs) solid var(--border--base--default);
+  background: var(--fill--base--default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 100ms ease, border-color 100ms ease;
+}
+
+.checkbox__control svg {
+  display: none;
+  fill: var(--icon--base--contrast);
+  color: var(--icon--base--contrast);
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.checkbox__label {
+  font-size: var(--neo-type-body-lg-regular-size-rem);
+  font-weight: var(--neo-type-body-lg-regular-weight);
+  line-height: var(--neo-type-body-lg-regular-line-height-rem);
+  color: var(--text--base--default);
+}
+
+.checkbox:hover .checkbox__control {
+  border-color: var(--border--base--focus);
+}
+
+.checkbox--selected .checkbox__control,
+input[type="checkbox"]:checked + .checkbox__control {
+  background: var(--icon--base--default);
+  border-color: var(--icon--base--default);
+}
+
+.checkbox--selected .checkbox__control svg,
+input[type="checkbox"]:checked + .checkbox__control svg {
+  display: block;
+}
+
+.checkbox--indeterminate .checkbox__control {
+  background: var(--icon--base--default);
+  border-color: var(--icon--base--default);
+}
+
+input[type="checkbox"]:focus-visible + .checkbox__control {
+  outline: var(--neo-stroke-focus-ring-width) solid var(--focus--ring--default);
+  outline-offset: 0.125rem;
+  box-shadow: 0 0 0 var(--neo-stroke-focus-ring-width) var(--focus--gap--default);
+}
+
+.checkbox--disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.checkbox--disabled .checkbox__control {
+  background: var(--fill--base--light);
+  border-color: var(--border--base--disabled);
+}
+
+.checkbox--selected.checkbox--disabled .checkbox__control,
+.checkbox--indeterminate.checkbox--disabled .checkbox__control {
+  background: var(--icon--base--disabled);
+  border-color: var(--icon--base--disabled);
+}
+
+.checkbox--disabled .checkbox__label {
+  color: var(--text--base--disabled);
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--neo-space-xs-rem);
+  margin: 0;
+  padding: 0;
+  border: none;
+  min-width: 0;
+}
+

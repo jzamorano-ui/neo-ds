@@ -1,0 +1,35 @@
+/* packages/foundations/css/index.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+@import './alert.css';
+@import './aspect-ratio.css';
+@import './badge.css';
+@import './banner.css';
+@import './button.css';
+@import './button-icon.css';
+@import './checkbox.css';
+@import './chips.css';
+@import './chips-group.css';
+@import './combobox.css';
+@import './empty-state.css';
+@import './link.css';
+@import './menu.css';
+@import './modal-dialog.css';
+@import './modal-fullscreen.css';
+@import './radio-button.css';
+@import './select.css';
+@import './spinner.css';
+@import './tabs.css';
+@import './tag.css';
+@import './text-field.css';
+@import './toggle.css';
+@import './tooltip.css';
+
+.alert, .aspect-ratio, .badge, .notification, .banner, .btn, .checkbox, .checkbox-group,
+.chip, .chips-group, .combobox, .empty-state, .empty-state-shell, .link, .menu-item, .menu-list, .menu-divider, .modal-overlay, .modal-dialog,
+.modal-full, .radio, .radio-group, .select, .spinner, .tabs, .tag, .field, .toggle, .tooltip,
+.alert *, .aspect-ratio *, .badge *, .banner *, .btn *, .checkbox *, .chip *, .combobox *,
+.empty-state *, .menu-item *, .menu-list *, .modal-dialog *, .modal-full *, .radio *, .select *, .tabs *,
+.tag *, .field *, .toggle *, .tooltip *,
+[role="tablist"], [role="tab"] {
+  box-sizing: border-box;
+}

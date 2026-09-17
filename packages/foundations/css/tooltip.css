@@ -1,0 +1,32 @@
+/* packages/foundations/css/tooltip.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+.tooltip {
+  display: inline-block;
+  max-width: 40ch;
+  padding-inline: var(--neo-space-sm-rem);
+  padding-block: var(--neo-space-xs-rem);
+  border-radius: var(--neo-radius-xs);
+  background: var(--fill--semantic--info--solid);
+  color: var(--text--base--contrast);
+  font-size: var(--neo-type-body-md-regular-size-rem);
+  font-weight: var(--neo-type-body-md-regular-weight);
+  line-height: var(--neo-type-body-md-regular-line-height-rem);
+  position: relative;
+}
+
+.tooltip[hidden] { display: none; }
+
+.tooltip::before {
+  content: none;
+  position: absolute;
+  border: 6px solid transparent;
+}
+
+.tooltip--top::before    { content: ""; bottom: 100%; left: 50%; transform: translateX(-50%); border-bottom-color: var(--fill--semantic--info--solid); }
+.tooltip--bottom::before  { content: ""; top: 100%;    left: 50%; transform: translateX(-50%); border-top-color: var(--fill--semantic--info--solid); }
+.tooltip--left::before  { content: ""; right: 100%; top: 50%; transform: translateY(-50%); border-right-color: var(--fill--semantic--info--solid); }
+.tooltip--right::before { content: ""; left: 100%;  top: 50%; transform: translateY(-50%); border-left-color: var(--fill--semantic--info--solid); }
+.tooltip--top-start::before    { content: ""; bottom: 100%; left: var(--neo-space-md-rem); border-bottom-color: var(--fill--semantic--info--solid); }
+.tooltip--top-end::before   { content: ""; bottom: 100%; right: var(--neo-space-md-rem); border-bottom-color: var(--fill--semantic--info--solid); }
+.tooltip--bottom-start::before  { content: ""; top: 100%; left: var(--neo-space-md-rem); border-top-color: var(--fill--semantic--info--solid); }
+.tooltip--bottom-end::before { content: ""; top: 100%; right: var(--neo-space-md-rem); border-top-color: var(--fill--semantic--info--solid); }

@@ -1,0 +1,224 @@
+/* packages/foundations/css/text-field.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--neo-space-xs-rem);
+  width: 100%;
+}
+
+.field__label-row {
+  display: flex;
+  align-items: center;
+  gap: var(--neo-space-xs-rem);
+}
+
+.field__label {
+  font-size: var(--neo-type-body-lg-medium-size-rem);
+  font-weight: var(--neo-type-body-lg-medium-weight);
+  line-height: var(--neo-type-body-lg-medium-line-height-rem);
+  color: var(--text--base--default);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.field__label--required::after {
+  content: ' *';
+  color: var(--text--semantic--error);
+}
+
+.field__input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--neo-space-sm-rem);
+  min-height: 44px;
+  padding-inline: var(--neo-space-md-rem);
+  padding-block: var(--neo-space-sm-rem);
+  border: var(--neo-stroke-xs) solid var(--border--base--default);
+  border-radius: var(--neo-radius-sm);
+  background: var(--fill--base--default);
+  transition: border-color 100ms ease, box-shadow 100ms ease;
+}
+
+.field__input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: var(--neo-type-body-lg-regular-size-rem);
+  font-weight: var(--neo-type-body-lg-regular-weight);
+  line-height: var(--neo-type-body-lg-regular-line-height-rem);
+  color: var(--text--base--default);
+  outline: none;
+  min-width: 0;
+}
+
+.field__input-wrapper:has(textarea),
+.field__input-wrapper--textarea {
+  box-sizing: border-box;
+  min-height: 112px;
+  padding-block: var(--neo-space-md-rem);
+  align-items: flex-start;
+}
+
+.field__input::placeholder {
+  color: var(--text--base--secondary);
+}
+
+.field__icon {
+  fill: var(--icon--base--default);
+  color: var(--icon--base--default);
+  width: var(--neo-icon-size-md-rem);
+  height: var(--neo-icon-size-md-rem);
+  flex-shrink: 0;
+  flex-shrink: 0;
+}
+
+.field__icon > svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.field__icon--tooltip {
+  width: var(--neo-icon-size-xs-rem);
+  height: var(--neo-icon-size-xs-rem);
+  flex-shrink: 0;
+}
+
+.field__icon--tooltip > svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+button.field__icon,
+button.field__icon--tooltip {
+  padding: 0;
+  border: none;
+  background: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: inherit;
+}
+
+button.field__icon--tooltip { position: relative; }
+button.field__icon--tooltip::after {
+  content: '';
+  position: absolute;
+  inset: calc((var(--neo-icon-size-md-rem) - var(--neo-icon-size-xs-rem)) / -2);
+}
+
+.field__prefix,
+.field__suffix {
+  flex-shrink: 0;
+  font-size: var(--neo-type-body-lg-regular-size-rem);
+  font-weight: var(--neo-type-body-lg-regular-weight);
+  line-height: var(--neo-type-body-lg-regular-line-height-rem);
+  color: var(--text--base--default);
+}
+
+
+.field--active .field__input-wrapper,
+.field--writing .field__input-wrapper {
+  border-width: var(--neo-stroke-sm);
+  border-color: var(--border--base--focus);
+}
+
+.field--focus .field__input-wrapper {
+  border-width: var(--neo-stroke-sm);
+  border-color: var(--border--base--focus);
+  box-shadow:
+    0 0 0 var(--neo-stroke-focus-ring-width) var(--focus--gap--default),
+    0 0 0 calc(var(--neo-stroke-focus-ring-width) * 2) var(--focus--ring--default);
+}
+
+.field--filled .field__input-wrapper {
+  border-width: var(--neo-stroke-xs);
+  border-color: var(--border--base--default);
+}
+
+.field--error .field__input-wrapper {
+  border-width: var(--neo-stroke-sm);
+  border-color: var(--border--semantic--error-solid);
+}
+
+.field--error.field--focus .field__input-wrapper {
+  box-shadow:
+    0 0 0 var(--neo-stroke-focus-ring-width) var(--focus--gap--default),
+    0 0 0 calc(var(--neo-stroke-focus-ring-width) * 2) var(--focus--ring--default);
+}
+
+.field--error .field__label {
+  color: var(--text--semantic--error);
+}
+
+.field__feedback {
+  font-size: var(--neo-type-body-md-regular-size-rem);
+  font-weight: var(--neo-type-body-md-regular-weight);
+  line-height: var(--neo-type-body-md-regular-line-height-rem);
+  color: var(--text--semantic--error);
+}
+
+.field--read-only .field__input-wrapper {
+  background: var(--fill--base--medium);
+  border-width: var(--neo-stroke-xs);
+  border-color: var(--border--base--default);
+}
+
+.field--read-only .field__input {
+  color: var(--text--base--default);
+  cursor: default;
+}
+
+.field--disabled .field__input-wrapper {
+  background: var(--fill--base--disabled);
+  border-width: var(--neo-stroke-xs);
+  border-color: var(--border--base--disabled);
+  pointer-events: none;
+}
+
+.field--disabled .field__label,
+.field--disabled .field__input,
+.field--disabled .field__prefix,
+.field--disabled .field__suffix,
+.field--disabled .field__helper {
+  color: var(--text--base--disabled);
+}
+
+.field--disabled .field__icon {
+  fill: var(--icon--base--disabled);
+  color: var(--icon--base--disabled);
+}
+
+.field__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--neo-space-sm-rem);
+}
+
+.field__helper {
+  font-size: var(--neo-type-body-md-regular-size-rem);
+  font-weight: var(--neo-type-body-md-regular-weight);
+  line-height: var(--neo-type-body-md-regular-line-height-rem);
+  color: var(--text--base--secondary);
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.field__counter {
+  font-size: var(--neo-type-body-md-regular-size-rem);
+  font-weight: var(--neo-type-body-md-regular-weight);
+  line-height: var(--neo-type-body-md-regular-line-height-rem);
+  color: var(--text--base--secondary);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
