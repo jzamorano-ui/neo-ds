@@ -1,0 +1,16 @@
+{
+  "name": "neo-ds",
+  "version": "1.0.0-rc.5",
+  "private": true,
+  "description": "Neo — the design system's material. It is published as two packages that go together: @neo-design/foundations and @neo-design/mui.",
+  "workspaces": [
+    "packages/foundations",
+    "packages/mui"
+  ],
+  "_procedencia": {
+    "_nota": "De dónde salió este árbol. La versión de arriba es la del ENTREGABLE y no la del repositorio que lo produjo: son dos promesas distintas y se mueven por razones distintas.",
+    "repoInterno": "2.0.0",
+    "commit": "7799dd33",
+    "emitido": "2026-09-24"
+  }
+}

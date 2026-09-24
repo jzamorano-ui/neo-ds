@@ -1,0 +1,216 @@
+# Integration — the Neo theme in a MUI app
+
+> 10 minutes. At the end: your whole MUI app wears Neo, and the four form controls whose
+> label is part of the structure use their `Neo*` wrapper.
+
+## 1 · Install
+
+Neo is two packages that go together: `@neo-design/foundations` (tokens, icons, plain CSS layer — no React,
+no MUI) and `@neo-design/mui` (the theme and the components, which depends on the first). Both are on
+the public npm registry.
+
+```sh
+# this is the whole install: npm reads the peers and brings
+# React, Material UI and Emotion in versions that work
+npm i @neo-design/foundations @neo-design/mui
+```
+
+> **Release candidates go under the `next` tag.** While the version is a `-rc`, install it with
+> `npm i @neo-design/foundations@next @neo-design/mui@next`; `latest` only moves with a final version.
+
+> **Already using Material UI?** It has to be in `>=5.18.0 <7`. Do not install `@mui/material`
+> unpinned before Neo: npm brings the newest major —measured as broken in the table
+> below— and the install stops with `ERESOLVE`.
+
+**Versions that work**, measured by installing the tarballs in an empty project and rendering the
+components:
+
+| React | MUI | resultado |
+|---|---|---|
+| 18.3.1 | 5.18.0 | all 22 render — it is the combination the suite runs with |
+| 19.2.8 | 5.18.0 | all 22 render |
+| 19.2.8 | 6.5.0 | all 22 render |
+| 19.2.8 | 7.3.11 | **NO** — the theme's locale entry does not resolve and the material does not bundle |
+| 19.2.8 | 9.4.0 | **NO** — `NeoCombobox` does not mount and `inputProps` leaks into the DOM |
+
+The peer is `>=5.18.0 <7`.
+
+Everything is imported through its entry point; no internal path of a package is written by hand:
+
+| import | what it ships |
+|---|---|
+| `@neo-design/mui` | the theme and the 24 components, as `Neo*` |
+| `@neo-design/mui/theme` | the theme only |
+| `@neo-design/foundations/tokens.css` · `/foundations.css` | the CSS variables |
+| `@neo-design/foundations/icons.css` · `/sprite` | the icon layer: the classes, and the sprite as a string |
+| `@neo-design/foundations/icons.json` | the 167 ids, grouped by family |
+| `@neo-design/foundations/css/<component>.css` | a single plain stylesheet, if consumed without React |
+
+### The theme dresses every component, with no extra imports
+
+Three components — `NeoAspectRatio`, `NeoBanner` and `NeoEmptyState` — have no Material UI component
+underneath: they are compositions of their own. Their rules still reach you through the theme, which
+declares them globally under `CssBaseline`. **Mount the theme and they are dressed**, like every other
+component. No stylesheet import is needed with React.
+
+The sheets under `@neo-design/foundations/css/` stay published for the other path: consuming the system
+without React. They are the same decisions, in plain CSS.
+
+### Font: Noto Sans (mandatory)
+
+The theme asks for `Noto Sans` and does not include it. Without it the app falls back to `system-ui`.
+Three weights: **400** · **500** · **700**.
+
+```sh
+npm i @fontsource/noto-sans
+```
+
+```jsx
+// next to where the theme is mounted (main.tsx / _app.tsx)
+import '@fontsource/noto-sans/400.css';
+import '@fontsource/noto-sans/500.css';
+import '@fontsource/noto-sans/700.css';
+```
+
+### Without React
+
+`@neo-design/foundations/css/` works on its own, with no React and no theme, **loaded in this order**: the
+two token sheets, then `css/index.css`, then the sheet of each component you use.
+
+**`index.css` is not optional.** Besides importing every component sheet, it carries the box model
+(`box-sizing: border-box`, scoped to Neo's own classes). Without it a `min-height` applies to the
+content and the boxes come out taller than the master: a text field at 62px where the master says 44,
+and a menu item at 56 where it says 40.
+
+The sheets style components, not the document, so the font is declared once on the root:
+
+```css
+html { font-family: "Noto Sans", system-ui, sans-serif; }
+```
+
+## 2 · Mount the theme (once)
+
+```jsx
+import { ThemeProvider, CssBaseline } from '@mui/material';
+import { theme } from '@neo-design/mui';
+
+export default function App({ children }) {
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />   {/* required: injects the CSS variables and the typographic base */}
+      {children}
+    </ThemeProvider>
+  );
+}
+```
+
+With that, `<Button>`, `<Alert>`, `<Chip>`, `<Dialog>`… come out in the Neo style.
+
+> **Four exceptions, and they are structural.** In `TextField`, `TextField multiline`, `Select` and
+> `Autocomplete`, MUI draws the label **inside** the border and the master wants it **above** the field,
+> with its help row and its footer. A theme changes style, not structure, so there you use the wrapper:
+> `NeoTextField`, `NeoTextArea`, `NeoSelect`, `NeoCombobox`. Using the raw MUI one is not a styling
+> detail: the label lands on top of the control and takes the space of a line.
+
+### Next.js App Router
+
+The theme is a non-serializable object: it goes behind a client boundary, and Neo's components go
+inside that boundary.
+
+```jsx
+// app/providers.tsx
+'use client';
+import { ThemeProvider, CssBaseline } from '@mui/material';
+import { theme } from '@neo-design/mui';
+
+export function Providers({ children }) {
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      {children}
+    </ThemeProvider>
+  );
+}
+```
+
+```jsx
+// app/layout.tsx  — stays a Server Component
+import { Providers } from './providers';
+export default function Layout({ children }) {
+  return <html><body><Providers>{children}</Providers></body></html>;
+}
+```
+
+## 3 · The icons (the classes come with the theme; the sprite is mounted once)
+
+The 167 icons are a layer of their own. **The classes — `.icon` and its sizes — reach you through the
+theme**, like every other rule: mount it and they are there, with no stylesheet to import. What still
+has to be mounted is the **sprite**, which is **injected** into the document rather than referenced as
+a file: a `<use>` pointing at an external file is blocked by CORS.
+
+```jsx
+import { sprite } from '@neo-design/foundations/sprite';
+```
+
+```jsx
+// as high up the tree as possible
+<div hidden dangerouslySetInnerHTML={{ __html: sprite }} />
+```
+
+The sprite ships as a string, so this works in any bundler and in Node — there is nothing to
+configure.
+
+```jsx
+<svg className="icon"><use href="#system-add" /></svg>
+```
+
+**The ids are in `@neo-design/foundations/icons.json`** — 167, grouped by family. The id is
+`<family>-<name>`: the file lists `"mail"` under `system`, and the markup uses `#system-mail`. An id
+that does not exist breaks nothing and draws nothing: check the list before writing one. Some old ids
+keep an alias —`#system-correo` is now `#system-mail`—; inside a `Neo*` the old one still draws and
+warns once in the console, and the new one is the one to write.
+
+| familia | color |
+|---|---|
+| `system` | uses `currentColor` — inherited from the context, or set with the `.icon` class |
+| `semantic` | already carries its color bound to its token |
+| `brand` | its own multicolor. Only its **size** can be changed |
+
+**Without React** there is no theme to carry the classes: import `@neo-design/foundations/icons.css`
+yourself, with both token sheets loaded before it.
+
+## 4 · Check that it came out right
+
+| Chequeo | Esperado |
+|---|---|
+| `:root` in DevTools | variables `--fill--primary--default`, `--neo-space-md`, … present |
+| Typography | `Noto Sans` across the whole tree |
+| `<Button variant="contained">` | navy `#1F3644` (not MUI's blue) |
+| `<Alert severity="error">` | pink background `#FEF2F2`, crimson icon |
+| Keyboard focus (Tab) | blue ring with a halo (gap) |
+| A `system` icon with `.icon` | takes the context's color and the token's size |
+
+## Forms
+
+The label is static and on top, not floating as MUI ships it by default: compose
+`FormControl + FormLabel + OutlinedInput` with `notched={false}`, wiring `htmlFor`/`id` and
+`aria-describedby` to the helper. The full example, with the error case, is in
+[EXAMPLES.md](./EXAMPLES.md).
+
+For the rest of the components, MUI is used directly: [COMPONENT-MAP.md](./COMPONENT-MAP.md).
+
+## What 1.0.0 does not cover
+
+| not covered | |
+|---|---|
+| **Screen-reader announcements** | not measured |
+| **RTL** | no master is drawn RTL |
+
+Covered and measured: keyboard operation and focus order, `axe` on every harness, and reduced motion.
+
+## Notas
+
+- **ESM**: the package is ES modules (`type: module`). In Jest use `transformIgnorePatterns`, or Vitest.
+- **TypeScript**: the types load on their own (augmentations included: `color="brand"` on Button, Typography variants, the `xxl` breakpoint).
+- **No dark mode**: a single mode.
+- The **visual source of truth is Figma**: each component spec links its master.

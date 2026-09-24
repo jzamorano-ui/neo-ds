@@ -1,0 +1,90 @@
+# Neo — Design System
+
+> Material UI v5 theme + semantic tokens + icons + components.
+> Figma is the source of truth: when in visual doubt, the master rules.
+
+Each component has its spec (`docs/components/<x>.md`): when it is used and when not, its anatomy with
+the master's measurements, its states, its accessibility and its API. The types the package publishes
+(`.d.ts`) are its exact signature.
+
+## Components
+
+- [Alert](docs/components/alert.md): Communicates system messages the user needs to read. Axes: type. React: `import { NeoAlert } from '@neo-design/mui'`.
+- [AspectRatio](docs/components/aspect-ratio.md): Fixes the proportion (width: height) of the content and keeps it when the size changes. Axes: ratio. React: `import { NeoAspectRatio } from '@neo-design/mui'`.
+- [Badge](docs/components/badge.md): Communicates system state or an activity count, compactly. Axes: type. React: `import { NeoBadge } from '@neo-design/mui'`.
+- [Banner](docs/components/banner.md): Highlights a message within the page —a campaign, a benefit, a notice— with or without an action. Axes: size, full-photo (prop `fullPhoto`). React: `import { NeoBanner } from '@neo-design/mui'`.
+- [Button](docs/components/button.md): Runs actions. Axes: type (prop `family`), variant, surface, size. React: `import { NeoButton } from '@neo-design/mui'`.
+- [ButtonIcon](docs/components/button-icon.md): Runs an action that is understood by its icon: close, back, add, more options. Axes: type (prop `family`), variant, size, surface. React: `import { NeoButtonIcon } from '@neo-design/mui'`.
+- [Checkbox](docs/components/checkbox.md): Multiple, independent selection. React: `import { NeoCheckbox } from '@neo-design/mui'`.
+- [Chips](docs/components/chips.md): Compact interactive filter or selection within the same view. React: `import { NeoChips } from '@neo-design/mui'`.
+- [ChipsGroup](docs/components/chips-group.md): A row of related chips chosen together: several at once, or one at a time. React: `import { NeoChipsGroup } from '@neo-design/mui'`.
+- [Combobox](docs/components/combobox.md): Single selection from a list filterable by text: you type and the list narrows down to the matches. React: `import { NeoCombobox } from '@neo-design/mui'`.
+- [EmptyState](docs/components/empty-state.md): Takes the place of content that does not exist yet and says what can be done about it. React: `import { NeoEmptyState } from '@neo-design/mui'`.
+- [Link](docs/components/link.md): Takes the person somewhere else. React: `import { NeoLink } from '@neo-design/mui'`.
+- [Menu](docs/components/menu.md): Public floating-list primitive: the reusable panel of options. React: `import { NeoMenu } from '@neo-design/mui'`.
+- [ModalDialog](docs/components/modal-dialog.md): Interrupts the flow to ask for a decision or an answer. Axes: size, type. React: `import { NeoModalDialog } from '@neo-design/mui'`.
+- [ModalFullscreen](docs/components/modal-fullscreen.md): Takes over the whole screen for dense information or a long task, without losing the point of origin. React: `import { NeoModalFullscreen } from '@neo-design/mui'`.
+- [RadioButton](docs/components/radio-button.md): Exclusive selection among mutually exclusive options. Axes: direction. React: `import { NeoRadioButton } from '@neo-design/mui'`.
+- [Select](docs/components/select.md): Single selection of one option from a predefined set. React: `import { NeoSelect } from '@neo-design/mui'`.
+- [Snackbar](docs/components/snackbar.md): Communicates, for a moment, the result of an action or a change in the system, without interrupting the task. It floats over the page and goes away on its own. React: `import { NeoSnackbar } from '@neo-design/mui'`.
+- [Spinner](docs/components/spinner.md): Indicator for a brief, localized load. Axes: size. React: `import { NeoSpinner } from '@neo-design/mui'`.
+- [Tabs](docs/components/tabs.md): Organizes content into sections within a single view. React: `import { NeoTabs } from '@neo-design/mui'`.
+- [Tag](docs/components/tag.md): Informational classification label: which category an element belongs to. Axes: tone. React: `import { NeoTag } from '@neo-design/mui'`.
+- [TextField](docs/components/text-field.md): Text input typed by the person. Axes: type. React: `import { NeoTextField } from '@neo-design/mui'`.
+- [Toggle](docs/components/toggle.md): On/off control with immediate effect. React: `import { NeoToggle } from '@neo-design/mui'`.
+- [Tooltip](docs/components/tooltip.md): Contextual informational label about the element that triggers it. Axes: placement. React: `import { NeoTooltip } from '@neo-design/mui'`.
+- [TextArea](docs/components/text-field.md): realizes `text-field` together with `NeoTextField`, and one spec covers both. React: `import { NeoTextArea } from '@neo-design/mui'`.
+- [RadioGroup](docs/components/radio-button.md): realizes `radio-button` together with `NeoRadioButton`, and one spec covers both. React: `import { NeoRadioGroup } from '@neo-design/mui'`.
+
+## Tokens
+
+- [packages/foundations/tokens/neo-color.css](packages/foundations/tokens/neo-color.css): 94 semantic color tokens. They are consumed by role —fill, text, border or icon, plus an intent—, never by value.
+- [packages/foundations/tokens/neo-foundations.css](packages/foundations/tokens/neo-foundations.css): 239 dimensional tokens — spacing, radii, strokes, typography.
+- [docs/MODEL.md](docs/MODEL.md): the grammar of a token name, on one page.
+- **Semantic tokens resolve to a direct value, with no `var()` chains — and that is a decision, not a gap**:
+  primitives do not ship (if a color is missing, a ROLE is missing), and two roles that share a hex are
+  independent on purpose — chaining them would invent a relationship the design does not have.
+
+## How to consume it in a React app
+
+Order matters — the first external eval showed an agent vendoring the CSS layer because it did not
+find this paragraph:
+
+1. **Mount the theme, once**: `import { theme } from '@neo-design/mui'` (the alias
+`@neo-design/mui/theme` also exists) + `<ThemeProvider theme={theme}><CssBaseline/>`. With that, the `@mui/material` components
+   (`Button`, `Alert`, `Dialog`, `Chip`…) come out with Neo styling — the system's 21, not
+   only the ones that have a wrapper. **With 4 exceptions, and they are structural, not cosmetic:**
+`TextField` → use `NeoTextField`, `TextField` → use `NeoTextArea`, `Select` → use `NeoSelect`, `Autocomplete` → use `NeoCombobox`. In those, MUI puts the label inside the
+   border and the master wants it above the field: a theme changes style, not structure. Details and
+   checklist: docs/dev/INTEGRATION.md.
+2. **The `Neo*` wrappers** add the system's API where MUI falls short:
+`import { NeoButton } from '@neo-design/mui'` — the package's single entry point, with no internal
+   paths. Each component's row (above) says which one has a wrapper and which one is used as themed
+   MUI.
+3. **The plain CSS layer** (`packages/foundations/css/`) implements each component without depending on MUI: it is
+   for surfaces WITHOUT React. In a React app it is not copied or vendored — the theme already brings
+   everything.
+
+## Figma — the source of truth
+
+The repo MIRRORS these files; never the other way around. When code and Figma disagree, the master is measured.
+(Section generated from the ecosystem registry — the single home of these keys.)
+
+- **tokens** · `ml3ScFhJNwgs6xZpKUKuok` — Semantics + Layout + Primitives — the source of truth for values
+- **icons** · `zIbuWAvLhwTlwnVwbDgY5n` — the icons, in three families
+- **ds** · `9FoTERLTyDXz3gmPLjjJ09` — the component masters — they consume Tokens and Icons
+- **workflow** · `VrZLhxdMqBeK3JrSP3v4kF` — the process scaffolding: notes, QA, mockup chrome
+- **ilustraciones** · `q1m7Dkvtje8v7ZTzX6uc8E` — OPS-Library-Ilustraciones: illustrations with their own tokens
+
+## Rules an agent must follow
+
+- One visually dominant action per view.
+- Colors come from the semantic tokens; a hand-written hex is an error.
+- A field's label is visible and static. Help text and the error message share ONE slot: in `error`, that slot says the error.
+- States the browser already provides (hover, focus) are never props.
+- **A component accepts more props than the system decided.** The wrappers pass what they do not
+  recognize to the base MUI component, so `<NeoButton fullWidth>` *works* even though the system
+  has no full-width button: the master does not have it and the system does not declare it. That is
+  not a shortcut, it is leaving the system without anything warning you. The only thing used freely is
+`sx` for **the consumer's layout** —margins, gap, position— because layout is a separate layer and
+  does not reach the system; for appearance, never: the theme decides that.

@@ -1,0 +1,44 @@
+{
+  "name": "@neo-design/foundations",
+  "version": "1.0.0-rc.5",
+  "description": "Neo — the system foundations: semantic tokens in JS and CSS, icons and the plain CSS layer. It does not depend on React or Material UI.",
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    "./tokens.css": "./tokens/neo-color.css",
+    "./foundations.css": "./tokens/neo-foundations.css",
+    "./icons.css": "./icons/icons.css",
+    "./sprite": "./icons/sprite.mjs",
+    "./icons.json": "./icons/index.json",
+    "./css/*": "./css/*",
+    "./tokens/api-js.mjs": "./tokens/api-js.mjs",
+    "./tokens/breakpoints.mjs": "./tokens/breakpoints.mjs",
+    "./tokens/color-semantic.mjs": "./tokens/color-semantic.mjs",
+    "./tokens/color.mjs": "./tokens/color.mjs",
+    "./tokens/component-tokens.mjs": "./tokens/component-tokens.mjs",
+    "./tokens/container.mjs": "./tokens/container.mjs",
+    "./tokens/iconSize.mjs": "./tokens/iconSize.mjs",
+    "./tokens/radius.mjs": "./tokens/radius.mjs",
+    "./tokens/shadows.mjs": "./tokens/shadows.mjs",
+    "./tokens/spacing.mjs": "./tokens/spacing.mjs",
+    "./tokens/stroke.mjs": "./tokens/stroke.mjs",
+    "./tokens/typography.mjs": "./tokens/typography.mjs",
+    "./icon-aliases.mjs": "./icon-aliases.mjs",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "tokens",
+    "icons",
+    "css",
+    "icon-aliases.mjs",
+    "!icons/svg",
+    "!icons/icons.svg",
+    "!icons/_demo.html"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT"
+}

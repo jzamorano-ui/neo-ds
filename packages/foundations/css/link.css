@@ -1,0 +1,39 @@
+/* packages/foundations/css/link.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+.link {
+  color: inherit;
+  font-weight: var(--neo-type-body-lg-bold-weight);
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  text-decoration-skip-ink: auto;
+  cursor: pointer;
+}
+
+.link:focus-visible {
+  outline: var(--neo-stroke-focus-ring-width) solid var(--focus--ring--default);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 var(--neo-stroke-focus-ring-width) var(--focus--gap--default);
+  border-radius: var(--neo-radius-xs);
+}
+
+.link[data-surface="inverse"]:focus-visible {
+  outline-color: var(--focus--ring--inverse);
+  box-shadow: 0 0 0 var(--neo-stroke-focus-ring-width) var(--focus--gap--inverse);
+}
+
+.link--disabled,
+.link:not([href]) {
+  color: var(--text--base--disabled);
+  pointer-events: none;
+  cursor: default;
+}
+
+.link--standalone {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+}
+
+
