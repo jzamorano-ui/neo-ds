@@ -1,0 +1,126 @@
+/* packages/foundations/css/tabs.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  background: var(--fill--base--default);
+}
+
+[role="tablist"] {
+  display: flex;
+  align-items: stretch;
+  overflow-x: auto;
+  position: relative;
+  background: var(--fill--base--default);
+  border-style: solid;
+  border-width: var(--neo-stroke-xs);
+  border-color: var(--border--base--secondary);
+  border-radius: var(--neo-radius-sm) var(--neo-radius-sm) 0 0;
+  box-shadow: var(--neo-elevation-md);
+}
+
+[role="tab"] {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: var(--neo-space-sm-rem);
+  padding-inline: var(--neo-space-lg-rem);
+  padding-block: var(--neo-space-md-rem);
+  background: var(--fill--tertiary--default);
+  border: none;
+  cursor: pointer;
+  font-size: var(--neo-type-body-lg-medium-size-rem);
+  font-weight: var(--neo-type-body-lg-medium-weight);
+  line-height: var(--neo-type-body-lg-medium-line-height-rem);
+  color: var(--text--base--secondary);
+  position: relative;
+  white-space: nowrap;
+  transition: color 100ms ease, background 100ms ease;
+}
+
+[role="tab"]:first-child { border-top-left-radius: var(--neo-radius-sm); }
+[role="tab"]:last-child  { border-top-right-radius: var(--neo-radius-sm); }
+
+[role="tab"] svg {
+  fill: var(--icon--base--secondary);
+  color: var(--icon--base--secondary);
+  width: var(--neo-icon-size-sm-rem);
+  height: var(--neo-icon-size-sm-rem);
+  flex-shrink: 0;
+}
+
+[role="tab"]:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: var(--neo-stroke-xs);
+  background: var(--border--base--secondary);
+  z-index: 1;
+}
+
+[role="tab"]::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--neo-stroke-sm);
+  background: var(--border--base--default);
+  transition: background 100ms ease;
+}
+
+[role="tab"]:hover:not([aria-selected="true"]):not([aria-disabled="true"]) {
+  background: var(--fill--tertiary--hover);
+  color: var(--text--base--default);
+}
+
+[role="tab"][aria-selected="true"] {
+  background: var(--fill--tertiary--active);
+  color: var(--text--base--default);
+}
+
+[role="tab"][aria-selected="true"]::after {
+  background: var(--border--base--focus);
+}
+
+[role="tab"][aria-selected="true"] svg {
+  fill: currentColor;
+}
+
+[role="tab"]:focus-visible {
+  outline: var(--neo-stroke-focus-ring-width) solid var(--focus--ring--default);
+  outline-offset: calc(-1 * var(--neo-stroke-focus-ring-width));
+  box-shadow: inset 0 0 0 calc(var(--neo-stroke-focus-ring-width) * 2) var(--focus--gap--default);
+  isolation: isolate;
+}
+
+[role="tab"]:focus-visible::before,
+[role="tab"]:focus-visible::after {
+  z-index: -1;
+}
+
+[role="tab"][aria-disabled="true"] {
+  color: var(--text--base--disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+[role="tab"][aria-disabled="true"]::after {
+  background: var(--border--base--secondary);
+}
+
+[role="tab"][aria-disabled="true"] svg {
+  fill: var(--icon--base--disabled);
+  color: var(--icon--base--disabled);
+}
+
+[role="tabpanel"] {
+  padding-block: var(--neo-space-lg-rem);
+}
+
+[role="tabpanel"][hidden] {
+  display: none;
+}

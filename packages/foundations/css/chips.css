@@ -1,0 +1,88 @@
+/* packages/foundations/css/chips.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+.chip {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--neo-space-xs-rem);
+  padding-inline: var(--neo-space-md-rem);
+  padding-block: var(--neo-space-sm-rem);
+  height: 32px;
+  border-radius: var(--neo-radius-pill);
+  border: var(--neo-stroke-xs) solid var(--border--base--default);
+  background: var(--fill--base--default);
+  font-size: var(--neo-type-body-md-medium-size-rem);
+  font-weight: var(--neo-type-body-md-medium-weight);
+  line-height: var(--neo-type-body-md-medium-line-height-rem);
+  color: var(--text--base--default);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 100ms ease, border-color 100ms ease, color 100ms ease;
+}
+
+
+.chip svg,
+.chip [aria-hidden="true"] {
+  fill: var(--icon--base--default);
+  color: var(--icon--base--default);
+  width: var(--neo-icon-size-xs-rem);
+  height: var(--neo-icon-size-xs-rem);
+  flex-shrink: 0;
+}
+
+.chip:hover:not([disabled]):not(.chip--disabled):not([aria-pressed="true"]):not(.chip--selected):not(:has(input:checked)) {
+  background: var(--fill--primary--hover);
+  border-color: var(--fill--primary--hover);
+  color: var(--text--base--contrast);
+}
+
+.chip:hover:not([disabled]):not(.chip--disabled):not([aria-pressed="true"]):not(.chip--selected):not(:has(input:checked)) svg,
+.chip:hover:not([disabled]):not(.chip--disabled):not([aria-pressed="true"]):not(.chip--selected):not(:has(input:checked)) [aria-hidden="true"] {
+  fill: var(--icon--base--contrast);
+  color: var(--icon--base--contrast);
+}
+
+.chip[aria-pressed="true"],
+.chip--selected,
+.chip:has(input:checked) {
+  background: var(--fill--primary--active);
+  border-color: var(--fill--primary--active);
+  color: var(--text--base--contrast);
+}
+
+.chip[aria-pressed="true"] svg,
+.chip[aria-pressed="true"] [aria-hidden="true"],
+.chip--selected svg,
+.chip--selected [aria-hidden="true"],
+.chip:has(input:checked) svg,
+.chip:has(input:checked) [aria-hidden="true"] {
+  fill: var(--icon--base--contrast);
+  color: var(--icon--base--contrast);
+}
+
+.chip:focus-visible,
+.chip:has(input:focus-visible) {
+  outline: var(--neo-stroke-focus-ring-width) solid var(--focus--ring--default);
+  outline-offset: 0.125rem;
+  box-shadow: 0 0 0 var(--neo-stroke-focus-ring-width) var(--focus--gap--default);
+}
+
+.chip[disabled],
+.chip--disabled,
+.chip:has(input:disabled) {
+  background: var(--fill--base--disabled);
+  border-color: var(--border--base--disabled);
+  color: var(--text--base--disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.chip[disabled] svg,
+.chip--disabled svg,
+.chip:has(input:disabled) svg {
+  fill: var(--icon--base--disabled);
+  color: var(--icon--base--disabled);
+}
+
+.chip:has(input[type="radio"]) { position: relative; }
+

@@ -1,0 +1,126 @@
+/* packages/foundations/css/drawer.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1300;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 540px;
+  max-width: 100vw;
+  height: 100dvh;
+  background: var(--surface--base--default);
+}
+
+
+.drawer > * {
+  align-self: stretch;
+}
+
+.drawer__header {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: var(--neo-space-md-rem);
+  padding-inline: var(--neo-space-xl-rem);
+  padding-block: var(--neo-space-lg-rem);
+}
+
+.drawer[data-scroll="top"] .drawer__header,
+.drawer[data-scroll="mid"] .drawer__header,
+.drawer[data-scroll="bottom"] .drawer__header {
+  border-bottom: var(--neo-stroke-xs) solid var(--border--base--secondary);
+}
+
+.drawer__header > * {
+  align-self: stretch;
+}
+
+.drawer__title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+}
+
+.drawer__title {
+  margin: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text--base--default);
+  font-size: var(--neo-type-title-sm-bold-size-rem);
+  font-weight: var(--neo-type-title-sm-bold-weight);
+  line-height: var(--neo-type-title-sm-bold-line-height-rem);
+}
+
+.drawer__close {
+  flex: 0 0 auto;
+}
+
+.drawer__content {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding-inline: var(--neo-space-xl-rem);
+  padding-block: 0 var(--neo-space-lg-rem);
+  color: var(--text--base--default);
+  font-size: var(--neo-type-body-lg-regular-size-rem);
+  font-weight: var(--neo-type-body-lg-regular-weight);
+  line-height: var(--neo-type-body-lg-regular-line-height-rem);
+}
+
+.drawer__content:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 0 0 var(--neo-stroke-focus-ring-width) var(--focus--ring--default),
+    inset 0 0 0 calc(var(--neo-stroke-focus-ring-width) * 2) var(--focus--gap--default);
+}
+
+.drawer__image {
+  display: block;
+  height: 224px;
+  margin-inline: calc(-1 * var(--neo-space-xl-rem));
+  overflow: hidden;
+}
+
+img.drawer__image,
+.drawer__image > img,
+.drawer__image > picture,
+.drawer__image > video {
+  width: calc(100% + 2 * var(--neo-space-xl-rem));
+  object-fit: cover;
+}
+
+.drawer__image > img,
+.drawer__image > picture,
+.drawer__image > video {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.drawer__actions {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--neo-space-md-rem);
+  padding-inline: var(--neo-space-xl-rem);
+  padding-block: var(--neo-space-lg-rem) var(--neo-space-2xl-rem);
+  background: var(--surface--base--default);
+}
+
+.drawer__actions .btn {
+  width: 100%;
+}
+
+.drawer__actions[data-scroll="top"],
+.drawer__actions[data-scroll="mid"] {
+  border-top: var(--neo-stroke-xs) solid var(--border--base--secondary);
+}

@@ -1,0 +1,26 @@
+/* packages/foundations/css/chips-group.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+.chips-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--neo-space-xs-rem);
+  padding-block: var(--neo-space-none-rem);
+  padding-inline: var(--neo-space-none-rem);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.chips-group::-webkit-scrollbar { display: none; }
+
+.chips-group input[type="radio"] {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

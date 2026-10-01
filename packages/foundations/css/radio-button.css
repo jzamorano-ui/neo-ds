@@ -1,0 +1,132 @@
+/* packages/foundations/css/radio-button.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+.radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  cursor: pointer;
+  min-height: 2.75rem;
+}
+
+.radio__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+}
+
+.radio__wrapper input[type="radio"] {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radio__control {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: var(--neo-radius-pill);
+  border: var(--neo-stroke-xs) solid var(--border--base--default);
+  background: var(--fill--base--default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 100ms ease, border-color 100ms ease;
+  position: relative;
+}
+
+.radio__dot {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: var(--neo-radius-pill);
+  background: var(--icon--base--contrast);
+  display: none;
+}
+
+.radio__label {
+  font-size: var(--neo-type-body-lg-regular-size-rem);
+  font-weight: var(--neo-type-body-lg-regular-weight);
+  line-height: var(--neo-type-body-lg-regular-line-height-rem);
+  color: var(--text--base--default);
+}
+
+.radio:hover .radio__control {
+  border-color: var(--border--base--focus);
+}
+
+.radio--selected .radio__control,
+input[type="radio"]:checked + .radio__control {
+  background: var(--icon--base--default);
+  border-color: var(--icon--base--default);
+}
+
+.radio--selected .radio__dot,
+input[type="radio"]:checked + .radio__control .radio__dot {
+  display: block;
+}
+
+input[type="radio"]:focus-visible + .radio__control {
+  outline: var(--neo-stroke-focus-ring-width) solid var(--focus--ring--default);
+  outline-offset: 0.125rem;
+  box-shadow: 0 0 0 var(--neo-stroke-focus-ring-width) var(--focus--gap--default);
+}
+
+.radio--disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.radio--disabled .radio__control {
+  background: var(--fill--base--light);
+  border-color: var(--border--base--disabled);
+}
+
+.radio--selected.radio--disabled .radio__control {
+  background: var(--icon--base--disabled);
+  border-color: var(--icon--base--disabled);
+}
+
+.radio--disabled .radio__label {
+  color: var(--text--base--disabled);
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--neo-space-xs-rem);
+  margin: 0;
+  padding: 0;
+  border: none;
+  min-width: 0;
+}
+
+.radio-group__legend {
+  margin: 0 0 var(--neo-space-xs-rem);
+  padding: 0;
+  color: var(--text--base--default);
+  font-size: var(--neo-type-body-lg-regular-size-rem);
+  font-weight: var(--neo-type-body-lg-regular-weight);
+  line-height: var(--neo-type-body-lg-regular-line-height-rem);
+}
+
+.radio-group--horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.radio--hidden-label .radio__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}

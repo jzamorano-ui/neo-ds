@@ -1,0 +1,21 @@
+/* packages/foundations/css/spinner.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+.spinner {
+  display: inline-block;
+  border: 2px solid transparent;
+  border-top-color: var(--icon--base--default);
+  border-radius: var(--neo-radius-pill);
+  animation: neo-spin 0.8s linear infinite;
+}
+
+.spinner--small { width: 20px; height: 20px; }
+.spinner--medium { width: 24px; height: 24px; }
+.spinner--large { width: 32px; height: 32px; border-width: 3px; }
+
+@keyframes neo-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner { animation: none; }
+}

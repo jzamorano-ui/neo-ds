@@ -1,0 +1,53 @@
+/* packages/foundations/css/toggle.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.toggle__track {
+  display: inline-flex;
+  align-items: center;
+  width: 48px;
+  height: 24px;
+  padding-inline: var(--neo-space-xs-rem);
+  border-radius: var(--neo-radius-pill);
+  background: var(--fill--base--strong);
+  transition: background 120ms ease-out;
+}
+
+.toggle__thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--neo-radius-pill);
+  background: var(--fill--base--default);
+  transition: transform 120ms ease-out;
+}
+
+.toggle[aria-checked="true"] .toggle__track { background: var(--fill--semantic--success--solid); }
+.toggle[aria-checked="true"] .toggle__thumb { transform: translateX(var(--neo-switch-thumb-travel-rem)); }
+
+.toggle:focus-visible { outline: none; }
+.toggle:focus-visible .toggle__track {
+  box-shadow:
+    0 0 0 var(--neo-stroke-focus-ring-width) var(--focus--gap--default),
+    0 0 0 calc(2 * var(--neo-stroke-focus-ring-width)) var(--focus--ring--default);
+}
+
+.toggle:disabled { cursor: not-allowed; }
+.toggle:disabled .toggle__track {
+  background: var(--fill--base--disabled);
+  border: var(--neo-stroke-xs) solid var(--border--base--disabled);
+}
+.toggle:disabled .toggle__thumb { background: var(--fill--base--medium); }
+
+@media (prefers-reduced-motion: reduce) {
+  .toggle__track, .toggle__thumb { transition: none; }
+}

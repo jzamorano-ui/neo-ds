@@ -1,0 +1,85 @@
+/* packages/foundations/css/snackbar.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+.snackbar {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--neo-space-sm-rem);
+  max-width: 100%;
+  padding-block: var(--neo-space-md-rem);
+  padding-inline: var(--neo-space-lg-rem);
+  border-radius: var(--neo-radius-lg);
+  background: var(--fill--base--inverse);
+  color: var(--text--base--contrast);
+}
+
+.snackbar[hidden] { display: none; }
+
+.snackbar__message {
+  display: flex;
+  align-items: center;
+  gap: var(--neo-space-sm-rem);
+  flex: none;
+  min-width: 0;
+  min-height: var(--neo-icon-size-lg-rem);
+  margin: 0;
+}
+
+.snackbar__icon {
+  flex-shrink: 0;
+  width: var(--neo-icon-size-md-rem);
+  height: var(--neo-icon-size-md-rem);
+}
+
+.snackbar__text {
+  min-width: 0;
+  color: var(--text--base--contrast);
+  font-size: var(--neo-type-body-lg-bold-size-rem);
+  font-weight: var(--neo-type-body-lg-bold-weight);
+  line-height: var(--neo-type-body-lg-bold-line-height-rem);
+}
+
+.snackbar__action {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding-inline-start: var(--neo-space-sm-rem);
+}
+
+.snackbar__close {
+  flex-shrink: 0;
+  width: var(--neo-icon-size-lg-rem);
+  height: var(--neo-icon-size-lg-rem);
+  border-radius: var(--neo-radius-pill);
+}
+
+@media (max-width: 575px) {
+  .snackbar {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: minmax(var(--neo-icon-size-lg-rem), auto);
+    row-gap: var(--neo-space-sm-rem);
+    column-gap: var(--neo-space-sm-rem);
+    width: 100%;
+  }
+  .snackbar__message {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+    align-items: flex-start;
+    min-height: 0;
+    padding-block-start: var(--neo-space-xs-rem);
+  }
+  .snackbar__close { grid-column: 2; grid-row: 1; align-self: start; }
+  .snackbar__action {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: end;
+  }
+  .snackbar__text {
+    flex: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+}
