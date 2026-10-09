@@ -1,0 +1,16 @@
+/* packages/foundations/icons/icons.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+.icon { display: inline-flex; flex-shrink: 0; width: var(--neo-icon-size-md); height: var(--neo-icon-size-md); }
+.icon--xs { width: var(--neo-icon-size-xs); height: var(--neo-icon-size-xs); }
+.icon--sm { width: var(--neo-icon-size-sm); height: var(--neo-icon-size-sm); }
+.icon--md { width: var(--neo-icon-size-md); height: var(--neo-icon-size-md); }
+.icon--lg { width: var(--neo-icon-size-lg); height: var(--neo-icon-size-lg); }
+.icon--xl { width: var(--neo-icon-size-xl); height: var(--neo-icon-size-xl); }
+.icon--2xl { width: var(--neo-icon-size-2xl); height: var(--neo-icon-size-2xl); }
+.icon--3xl { width: var(--neo-icon-size-3xl); height: var(--neo-icon-size-3xl); }
+.icon--4xl { width: var(--neo-icon-size-4xl); height: var(--neo-icon-size-4xl); }
+
+.icon { color: var(--icon--base--default); }
+.icon--secondary { color: var(--icon--base--secondary); }
+.icon--disabled  { color: var(--icon--base--disabled); }
+.icon--inverse   { color: var(--icon--base--contrast); }

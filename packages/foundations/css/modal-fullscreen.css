@@ -1,0 +1,145 @@
+/* packages/foundations/css/modal-fullscreen.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+.modal-full {
+  position: fixed;
+  inset: 0;
+  z-index: 1300;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100dvh;
+  background: var(--surface--base--default);
+}
+
+.modal-full__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--neo-space-none-rem);
+  height: 104px;
+  padding-block: var(--neo-space-xl-rem);
+  padding-inline: var(--neo-space-3xl-rem);
+  border-bottom: var(--neo-stroke-xs) solid var(--border--base--secondary);
+}
+
+.modal-full__title {
+  margin: 0;
+  flex: 1;
+  text-align: center;
+  color: var(--text--base--default);
+  font-size: var(--neo-type-title-md-bold-size-rem);
+  font-weight: var(--neo-type-title-md-bold-weight);
+  line-height: var(--neo-type-title-md-bold-line-height-rem);
+}
+
+.modal-full__back { position: absolute; left: var(--neo-space-3xl-rem); }
+.modal-full__close { position: absolute; right: var(--neo-space-3xl-rem); }
+
+.modal-full__actions .btn { flex: 0 0 auto; width: 240px; }
+
+.modal-full__close,
+.modal-full__back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--icon--base--default);
+  cursor: pointer;
+}
+
+.modal-full__close:focus-visible,
+.modal-full__back:focus-visible {
+  outline: var(--neo-stroke-focus-ring-width) solid var(--focus--ring--default);
+  outline-offset: 2px;
+}
+
+.modal-full__close svg,
+.modal-full__back svg { width: 24px; height: 24px; }
+
+.modal-full__content {
+  display: grid;
+  grid-auto-rows: minmax(min-content, 1fr);
+  overflow-y: auto;
+  padding-inline: var(--neo-space-3xl-rem);
+  padding-block: var(--neo-space-none-rem) var(--neo-space-xl-rem);
+}
+
+.modal-full__content::-webkit-scrollbar { width: 8px; }
+.modal-full__content::-webkit-scrollbar-track { background: var(--fill--base--default); }
+.modal-full__content::-webkit-scrollbar-thumb { background: var(--fill--base--medium); border-radius: var(--neo-radius-pill); }
+.modal-full__content:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 0 0 var(--neo-stroke-focus-ring-width) var(--focus--ring--default),
+    inset 0 0 0 calc(var(--neo-stroke-focus-ring-width) * 2) var(--focus--gap--default);
+}
+
+.modal-full__actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--neo-space-md-rem);
+  height: 88px;
+  padding-block: var(--neo-space-xl-rem);
+  padding-inline: var(--neo-space-3xl-rem);
+  border-top: var(--neo-stroke-xs) solid var(--border--base--secondary);
+}
+
+@media (max-width: 719px) {
+  .modal-full__header {
+    height: 60px;
+    padding: var(--neo-space-sm-rem);
+    border-bottom: none;
+  }
+
+  .modal-full__title {
+    font-size: var(--neo-type-body-lg-bold-size-rem);
+    font-weight: var(--neo-type-body-lg-bold-weight);
+    line-height: var(--neo-type-body-lg-bold-line-height-rem);
+  }
+
+  .modal-full__header {
+    justify-content: flex-start;
+    gap: var(--neo-space-sm-rem);
+  }
+
+  .modal-full__back,
+  .modal-full__close { position: static; }
+
+  .modal-full__title {
+    flex: 1;
+    text-align: center;
+    margin-inline-end: 0;
+  }
+
+  .modal-full__title:first-child { text-align: start; }
+
+  .modal-full__close,
+  .modal-full__back { width: 40px; height: 40px; }
+  .modal-full__close svg,
+  .modal-full__back svg { width: 20px; height: 20px; }
+
+  .modal-full__content[data-scroll="mid"],
+  .modal-full__content[data-scroll="bottom"] { border-top: var(--neo-stroke-xs) solid var(--border--base--secondary); }
+  .modal-full__content[data-scroll="top"],
+  .modal-full__content[data-scroll="mid"] { border-bottom: var(--neo-stroke-xs) solid var(--border--base--secondary); }
+
+  .modal-full__content {
+    padding-inline: var(--neo-space-lg-rem);
+    padding-block: var(--neo-space-none-rem) var(--neo-space-lg-rem);
+  }
+
+  .modal-full__actions {
+    border-top: none;
+    flex-direction: column-reverse;
+    justify-content: center;
+    height: 128px;
+    padding-block: var(--neo-space-md-rem) var(--neo-space-xl-rem);
+    padding-inline: var(--neo-space-lg-rem);
+  }
+
+  .modal-full__actions .btn { width: 100%; }
+}

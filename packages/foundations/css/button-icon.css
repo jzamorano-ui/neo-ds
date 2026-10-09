@@ -1,0 +1,14 @@
+/* packages/foundations/css/button-icon.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+.btn--icon-only.btn--large { padding: 0; width: var(--neo-button-height-lg-rem); height: var(--neo-button-height-lg-rem); }
+.btn--icon-only.btn--medium { padding: 0; width: var(--neo-button-height-md-rem); height: var(--neo-button-height-md-rem); }
+.btn--icon-only.btn--small { padding: 0; width: var(--neo-button-height-sm-rem); height: var(--neo-button-height-sm-rem); }
+
+.btn--icon-only svg.icon--xs { width: var(--neo-icon-size-xs-rem); height: var(--neo-icon-size-xs-rem); }
+.btn--icon-only svg.icon--sm { width: var(--neo-icon-size-sm-rem); height: var(--neo-icon-size-sm-rem); }
+.btn--icon-only svg.icon--md { width: var(--neo-icon-size-md-rem); height: var(--neo-icon-size-md-rem); }
+.btn--icon-only svg.icon--lg { width: var(--neo-icon-size-lg-rem); height: var(--neo-icon-size-lg-rem); }
+.btn--icon-only svg.icon--xl { width: var(--neo-icon-size-xl-rem); height: var(--neo-icon-size-xl-rem); }
+.btn--icon-only svg.icon--2xl { width: var(--neo-icon-size-2xl-rem); height: var(--neo-icon-size-2xl-rem); }
+.btn--icon-only svg.icon--3xl { width: var(--neo-icon-size-3xl-rem); height: var(--neo-icon-size-3xl-rem); }
+.btn--icon-only svg.icon--4xl { width: var(--neo-icon-size-4xl-rem); height: var(--neo-icon-size-4xl-rem); }

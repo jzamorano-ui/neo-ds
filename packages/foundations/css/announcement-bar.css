@@ -1,0 +1,107 @@
+/* packages/foundations/css/announcement-bar.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+.announcement-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--neo-space-lg-rem);
+  padding: var(--neo-space-lg-rem) var(--neo-space-4xl-rem);
+  background-color: var(--fill--deco--2--solid);
+  color: var(--text--base--contrast);
+}
+
+.announcement-bar__content {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--neo-space-md-rem);
+  min-width: 0;
+  padding: 0 var(--neo-space-lg-rem) 0 0;
+}
+
+.announcement-bar__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: var(--neo-icon-size-md-rem);
+  height: var(--neo-icon-size-md-rem);
+}
+
+.announcement-bar__text {
+  flex: 1 1 0;
+  min-width: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: var(--neo-type-body-lg-medium-size-rem);
+  font-weight: var(--neo-type-body-lg-medium-weight);
+  line-height: var(--neo-type-body-lg-medium-line-height-rem);
+}
+
+.announcement-bar__link,
+.announcement-bar__button {
+  flex-shrink: 0;
+  align-self: center;
+  white-space: nowrap;
+}
+
+.announcement-bar__link {
+  color: var(--text--base--contrast);
+}
+
+.announcement-bar__close {
+  flex-shrink: 0;
+}
+
+@media (max-width: 1279px) {
+  .announcement-bar {
+    padding: var(--neo-space-lg-rem) var(--neo-space-3xl-rem);
+  }
+}
+
+@media (max-width: 1023px) {
+  .announcement-bar {
+    padding: var(--neo-space-lg-rem) var(--neo-space-2xl-rem);
+  }
+}
+
+@media (max-width: 719px) {
+  .announcement-bar {
+    align-items: flex-start;
+    padding: var(--neo-space-lg-rem);
+  }
+
+  .announcement-bar__content {
+    padding: 0;
+  }
+
+  .announcement-bar__text {
+    -webkit-line-clamp: 4;
+    font-size: var(--neo-type-body-md-medium-size-rem);
+    font-weight: var(--neo-type-body-md-medium-weight);
+    line-height: var(--neo-type-body-md-medium-line-height-rem);
+  }
+
+  .announcement-bar__link,
+  .announcement-bar__button {
+    align-self: flex-start;
+    margin-left: calc(var(--neo-icon-size-md-rem) + var(--neo-space-md-rem));
+  }
+
+  .announcement-bar__text {
+    flex: 1 1 calc(100% - var(--neo-icon-size-md-rem) - var(--neo-space-md-rem));
+    padding-top: 0.125rem;
+  }
+
+  .announcement-bar__close {
+    margin-top: -0.625rem;
+    margin-right: -0.625rem;
+  }
+}
+
+.announcement-bar__link:focus-visible {
+  outline: var(--neo-stroke-focus-ring-width) solid var(--focus--ring--inverse);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 var(--neo-stroke-focus-ring-width) var(--focus--gap--inverse);
+  border-radius: var(--neo-radius-xs);
+}

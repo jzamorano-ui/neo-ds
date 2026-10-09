@@ -1,0 +1,133 @@
+/* packages/foundations/css/alert.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--neo-space-xs-rem);
+  padding-inline: var(--neo-space-lg-rem);
+  padding-block: var(--neo-space-md-rem);
+  border-radius: var(--neo-radius-sm);
+  border-width: var(--neo-stroke-xs);
+  border-style: solid;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.alert__icon {
+  flex-shrink: 0;
+  width: var(--neo-icon-size-md-rem);
+  height: var(--neo-icon-size-md-rem);
+  margin-top: var(--neo-space-xs-rem);
+  margin-right: var(--neo-space-xs-rem);
+}
+
+.alert__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--neo-space-xs-rem);
+  flex: 1;
+  min-width: 0;
+}
+
+.alert__title,
+.alert__description {
+  margin: 0;
+}
+
+.alert__title {
+  font-size: var(--neo-type-title-xs-bold-size-rem);
+  font-weight: var(--neo-type-title-xs-bold-weight);
+  line-height: var(--neo-type-title-xs-bold-line-height-rem);
+}
+
+.alert__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--neo-space-xs-rem);
+  padding-block: var(--neo-space-xs-rem);
+}
+
+.alert__description {
+  font-size: var(--neo-type-body-md-regular-size-rem);
+  font-weight: var(--neo-type-body-md-regular-weight);
+  line-height: var(--neo-type-body-md-regular-line-height-rem);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.alert__link {
+  color: var(--text--base--default);
+  font-size: var(--neo-type-body-md-medium-size-rem);
+  font-weight: var(--neo-type-body-md-medium-weight);
+  line-height: var(--neo-type-body-md-medium-line-height-rem);
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  text-decoration-skip-ink: auto;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  min-height: 24px;
+}
+
+
+.alert__close {
+  flex-shrink: 0;
+  color: var(--icon--base--default);
+  background: var(--fill--tertiary--default);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--neo-icon-size-lg-rem);
+  height: var(--neo-icon-size-lg-rem);
+  border-radius: var(--neo-radius-pill);
+}
+
+.alert__close svg {
+  width: var(--neo-icon-size-xs-rem);
+  height: var(--neo-icon-size-xs-rem);
+}
+
+.alert__close:focus-visible {
+  outline: var(--neo-stroke-focus-ring-width) solid var(--focus--ring--default);
+}
+
+
+.alert--info {
+  background: var(--fill--semantic--info--soft);
+  border-color: var(--border--semantic--info);
+}
+
+.alert--info .alert__title { color: var(--text--semantic--info); }
+.alert--info .alert__description { color: var(--text--base--default); }
+
+.alert--success {
+  background: var(--fill--semantic--success--soft);
+  border-color: var(--border--semantic--success);
+}
+
+.alert--success .alert__title { color: var(--text--semantic--success); }
+.alert--success .alert__description { color: var(--text--base--default); }
+
+.alert--warning {
+  background: var(--fill--semantic--warning--soft);
+  border-color: var(--border--semantic--warning);
+}
+
+.alert--warning .alert__title { color: var(--text--semantic--warning); }
+.alert--warning .alert__description { color: var(--text--base--default); }
+
+.alert--error {
+  background: var(--fill--semantic--error--soft);
+  border-color: var(--border--semantic--error-soft);
+}
+
+.alert--error .alert__title { color: var(--text--semantic--error); }
+.alert--error .alert__description { color: var(--text--base--default); }

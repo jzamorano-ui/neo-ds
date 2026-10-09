@@ -1,0 +1,42 @@
+/* packages/foundations/css/skeleton.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+.skeleton {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  height: 1.2em;
+  background-color: var(--fill--base--medium);
+}
+
+.skeleton--text {
+  height: auto;
+  margin: 0;
+  transform-origin: 0 55%;
+  transform: scale(1, 0.6);
+  border-radius: var(--neo-radius-xs) / calc(var(--neo-radius-xs) / 0.6);
+}
+.skeleton--text:empty::before { content: '\00a0'; }
+
+.skeleton--circular { width: 40px; height: 40px; border-radius: var(--neo-radius-pill); }
+
+.skeleton--rounded { height: 60px; border-radius: var(--neo-radius-xs); }
+
+.skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, var(--fill--base--medium), var(--fill--base--light), var(--fill--base--medium));
+  animation: neo-skeleton-wave 2s linear 0.5s infinite;
+}
+
+@keyframes neo-skeleton-wave {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+  100% { transform: translateX(100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton::after { animation: none; }
+}

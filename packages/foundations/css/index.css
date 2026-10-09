@@ -1,0 +1,41 @@
+/* packages/foundations/css/index.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+@import './alert.css';
+@import './announcement-bar.css';
+@import './aspect-ratio.css';
+@import './badge.css';
+@import './banner.css';
+@import './bottom-sheet.css';
+@import './brand-loader.css';
+@import './button.css';
+@import './button-icon.css';
+@import './checkbox.css';
+@import './chips.css';
+@import './chips-group.css';
+@import './combobox.css';
+@import './drawer.css';
+@import './empty-state.css';
+@import './link.css';
+@import './menu.css';
+@import './modal-dialog.css';
+@import './modal-fullscreen.css';
+@import './radio-button.css';
+@import './select.css';
+@import './skeleton.css';
+@import './snackbar.css';
+@import './spinner.css';
+@import './tabs.css';
+@import './tag.css';
+@import './text-field.css';
+@import './toggle.css';
+@import './tooltip.css';
+
+.alert, .announcement-bar, .aspect-ratio, .badge, .notification, .banner, .btn, .checkbox, .checkbox-group,
+.bottom-sheet, .brand-loader, .brand-loader-shell, .chip, .chips-group, .combobox, .drawer, .empty-state, .empty-state-shell, .link, .menu-item, .menu-list, .menu-divider, .modal-overlay, .modal-dialog,
+.modal-full, .radio, .radio-group, .select, .skeleton, .snackbar, .spinner, .tabs, .tag, .field, .toggle, .tooltip,
+.alert *, .announcement-bar *, .aspect-ratio *, .badge *, .banner *, .btn *, .checkbox *, .chip *, .combobox *,
+.bottom-sheet *, .brand-loader *, .drawer *, .empty-state *, .menu-item *, .menu-list *, .modal-dialog *, .modal-full *, .radio *, .select *, .snackbar *, .tabs *,
+.tag *, .field *, .toggle *, .tooltip *,
+[role="tablist"], [role="tab"] {
+  box-sizing: border-box;
+}
