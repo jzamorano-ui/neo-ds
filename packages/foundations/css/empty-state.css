@@ -1,0 +1,149 @@
+/* packages/foundations/css/empty-state.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+.empty-state-shell {
+  container-type: inline-size;
+  container-name: empty-state;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--neo-space-lg-rem);
+  padding-block: var(--neo-space-xl-rem);
+  padding-inline: var(--neo-space-xl-rem);
+  border-radius: var(--neo-radius-md);
+  background: var(--surface--base--default);
+}
+
+
+@container empty-state (min-width: 720px) {
+  .empty-state {
+    gap: var(--neo-space-xl-rem);
+    padding-block: var(--neo-space-3xl-rem);
+    padding-inline: var(--neo-space-2xl-rem);
+  }
+}
+
+.empty-state__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--neo-space-md-rem);
+  width: 100%;
+  max-width: 480px;
+}
+
+@container empty-state (min-width: 720px) {
+  .empty-state__body { gap: var(--neo-space-lg-rem); }
+}
+
+.empty-state__icon-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--neo-space-none-rem);
+  width: 48px;
+  height: 48px;
+  padding-block: var(--neo-space-md-rem);
+  padding-inline: var(--neo-space-md-rem);
+  border-radius: var(--neo-radius-md);
+  background: var(--fill--base--light);
+  flex-shrink: 0;
+}
+
+@container empty-state (min-width: 720px) {
+  .empty-state__icon-box {
+    width: 64px;
+    height: 64px;
+    padding-block: var(--neo-space-lg-rem);
+    padding-inline: var(--neo-space-lg-rem);
+    border-radius: var(--neo-radius-lg);
+  }
+}
+
+.empty-state__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--neo-icon-size-md-rem);
+  height: var(--neo-icon-size-md-rem);
+  color: var(--icon--base--default);
+  fill: var(--icon--base--default);
+  flex-shrink: 0;
+}
+
+.empty-state__icon > svg {
+  width: 100%;
+  height: 100%;
+}
+
+@container empty-state (min-width: 720px) {
+  .empty-state__icon {
+    width: var(--neo-icon-size-lg-rem);
+    height: var(--neo-icon-size-lg-rem);
+  }
+}
+
+.empty-state__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--neo-space-none-rem);
+  width: 100%;
+}
+
+.empty-state__title {
+  text-align: center;
+  margin: 0;
+  color: var(--text--base--default);
+  font-size: var(--neo-type-body-lg-bold-size-rem);
+  font-weight: var(--neo-type-body-lg-bold-weight);
+  line-height: var(--neo-type-body-lg-bold-line-height-rem);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+@container empty-state (min-width: 720px) {
+  .empty-state__title {
+    font-size: var(--neo-type-title-sm-bold-size-rem);
+    font-weight: var(--neo-type-title-sm-bold-weight);
+    line-height: var(--neo-type-title-sm-bold-line-height-rem);
+  }
+}
+
+.empty-state__description {
+  text-align: center;
+  margin: 0;
+  color: var(--text--base--secondary);
+  font-size: var(--neo-type-body-md-regular-size-rem);
+  font-weight: var(--neo-type-body-md-regular-weight);
+  line-height: var(--neo-type-body-md-regular-line-height-rem);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+@container empty-state (min-width: 720px) {
+  .empty-state__description {
+    font-size: var(--neo-type-body-lg-regular-size-rem);
+    font-weight: var(--neo-type-body-lg-regular-weight);
+    line-height: var(--neo-type-body-lg-regular-line-height-rem);
+  }
+}
+
+.empty-state__actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: var(--neo-space-sm-rem);
+  flex-wrap: wrap;
+}

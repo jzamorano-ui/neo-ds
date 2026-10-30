@@ -1,0 +1,9 @@
+/* packages/foundations/css/text-area.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+.field__input-wrapper:has(textarea),
+.field__input-wrapper--textarea {
+  box-sizing: border-box;
+  min-height: 112px;
+  padding-block: var(--neo-space-md-rem);
+  align-items: flex-start;
+}

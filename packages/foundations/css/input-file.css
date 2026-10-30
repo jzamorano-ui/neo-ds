@@ -1,0 +1,86 @@
+/* packages/foundations/css/input-file.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+.field__input-wrapper--file {
+  position: relative;
+  cursor: pointer;
+}
+
+.field__file-native {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.field__file-native::file-selector-button {
+  cursor: pointer;
+}
+
+.field__file-text,
+.field__file-loading,
+.field__file-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--neo-type-body-lg-regular-size-rem);
+  font-weight: var(--neo-type-body-lg-regular-weight);
+  line-height: var(--neo-type-body-lg-regular-line-height-rem);
+}
+
+.field__file-text,
+.field__file-loading {
+  color: var(--text--base--secondary);
+}
+
+.field__file-name {
+  color: var(--text--base--default);
+}
+
+.field__file-end {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--neo-space-xs-rem);
+  flex: none;
+}
+
+.field__file-size {
+  font-size: var(--neo-type-body-md-regular-size-rem);
+  font-weight: var(--neo-type-body-md-regular-weight);
+  line-height: var(--neo-type-body-md-regular-line-height-rem);
+  color: var(--text--base--secondary);
+}
+
+.field__file-remove,
+.field__file-spinner {
+  flex: none;
+  margin-block: calc(-1 * var(--neo-space-xs-rem));
+}
+
+.field__file-remove {
+  position: relative;
+  z-index: 2;
+}
+
+.field--drag .field__input-wrapper {
+  border-color: var(--border--base--focus);
+}
+
+.field--read-only .field__input-wrapper--file,
+.field--read-only .field__file-native,
+.field--loading .field__input-wrapper--file,
+.field--loading .field__file-native,
+.field--disabled .field__file-native {
+  cursor: default;
+}
+
+.field--disabled .field__file-text,
+.field--disabled .field__file-name,
+.field--disabled .field__file-size {
+  color: var(--text--base--disabled);
+}

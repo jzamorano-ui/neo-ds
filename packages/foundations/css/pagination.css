@@ -1,0 +1,104 @@
+/* packages/foundations/css/pagination.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--neo-space-xs-rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pagination__page,
+.pagination__current,
+.pagination__previous,
+.pagination__next,
+.pagination__ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--neo-icon-size-lg-rem);
+  min-width: var(--neo-icon-size-lg-rem);
+  margin: 0;
+  padding: 0 var(--neo-space-sm-rem);
+  border: 0;
+  border-radius: var(--neo-radius-pill);
+  background-color: var(--fill--tertiary--default);
+  color: var(--text--base--default);
+  font-size: var(--neo-type-body-md-medium-size-rem);
+  font-weight: var(--neo-type-body-md-medium-weight);
+  line-height: var(--neo-type-body-md-medium-line-height-rem);
+}
+
+.pagination__page,
+.pagination__previous,
+.pagination__next {
+  cursor: pointer;
+}
+
+.pagination__previous,
+.pagination__next {
+  width: var(--neo-icon-size-lg-rem);
+  padding: 0;
+  color: var(--icon--base--default);
+}
+
+.pagination__previous svg,
+.pagination__next svg {
+  width: var(--neo-icon-size-xs-rem);
+  height: var(--neo-icon-size-xs-rem);
+  color: inherit;
+}
+
+@media (hover: hover) {
+  .pagination__page:hover,
+  .pagination__previous:hover,
+  .pagination__next:hover {
+    background-color: var(--fill--tertiary--hover);
+  }
+}
+
+.pagination__page:active,
+.pagination__previous:active,
+.pagination__next:active {
+  background-color: var(--fill--tertiary--active);
+}
+
+.pagination__page:focus-visible,
+.pagination__current:focus-visible,
+.pagination__previous:focus-visible,
+.pagination__next:focus-visible {
+  outline: var(--neo-stroke-focus-ring-width) solid var(--focus--ring--default);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 var(--neo-stroke-focus-ring-width) var(--focus--gap--default);
+}
+
+.pagination__current {
+  background-color: var(--fill--primary--active);
+  color: var(--text--base--contrast);
+  font-weight: var(--neo-type-body-md-bold-weight);
+}
+
+.pagination__ellipsis {
+  color: var(--text--base--secondary);
+}
+
+.pagination__page:disabled {
+  color: var(--text--base--disabled);
+  background-color: var(--fill--tertiary--default);
+  cursor: not-allowed;
+}
+
+.pagination__previous:disabled,
+.pagination__next:disabled {
+  color: var(--icon--base--disabled);
+  background-color: var(--fill--tertiary--default);
+  cursor: not-allowed;
+}

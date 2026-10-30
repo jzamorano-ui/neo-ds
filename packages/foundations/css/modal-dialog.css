@@ -1,0 +1,204 @@
+/* packages/foundations/css/modal-dialog.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: var(--surface--base--overlay);
+}
+
+.modal-dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  height: fit-content;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface--base--default);
+  border-radius: var(--neo-radius-xl);
+  width: calc(100% - 2 * var(--neo-space-lg-rem));
+  overflow: hidden;
+}
+
+.modal-dialog--xs { max-width: 343px;  max-height: 600px; }
+.modal-dialog--sm { max-width: 600px;  max-height: 700px; }
+.modal-dialog--md { max-width: 900px;  max-height: 740px; }
+.modal-dialog--lg { max-width: 1200px; max-height: 840px; }
+
+.modal-dialog--xs { --modal-dialog-gutter: var(--neo-space-lg-rem); }
+.modal-dialog--sm,
+.modal-dialog--md { --modal-dialog-gutter: var(--neo-space-xl-rem); }
+.modal-dialog--lg { --modal-dialog-gutter: var(--neo-space-2xl-rem); }
+
+.modal-dialog--xs { --modal-dialog-close-gutter: var(--neo-space-sm-rem); --modal-dialog-content-top: var(--neo-space-sm-rem);  --modal-dialog-content-bottom: var(--neo-space-lg-rem); }
+.modal-dialog--sm { --modal-dialog-close-gutter: var(--neo-space-sm-rem); --modal-dialog-content-top: var(--neo-space-sm-rem);  --modal-dialog-content-bottom: var(--neo-space-xl-rem); }
+.modal-dialog--md { --modal-dialog-close-gutter: var(--neo-space-lg-rem); --modal-dialog-content-top: var(--neo-space-none-rem); --modal-dialog-content-bottom: var(--neo-space-xl-rem); }
+.modal-dialog--lg { --modal-dialog-close-gutter: var(--neo-space-lg-rem); --modal-dialog-content-top: var(--neo-space-none-rem); --modal-dialog-content-bottom: var(--neo-space-xl-rem); }
+
+
+.modal-dialog__header {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--neo-space-md-rem);
+  padding: var(--neo-space-lg-rem) var(--modal-dialog-close-gutter) var(--neo-space-lg-rem) var(--modal-dialog-gutter);
+}
+
+.modal-dialog__title {
+  flex: 1;
+  margin: 0;
+  font-size: var(--neo-type-title-sm-bold-size-rem);
+  font-weight: var(--neo-type-title-sm-bold-weight);
+  line-height: var(--neo-type-title-sm-bold-line-height-rem);
+  color: var(--text--base--default);
+  min-width: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+
+.modal-dialog__close {
+  position: absolute;
+  top: var(--neo-space-sm-rem);
+  right: var(--neo-space-sm-rem);
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--neo-icon-size-xl-rem);
+  height: var(--neo-icon-size-xl-rem);
+  border-radius: var(--neo-radius-pill);
+}
+
+.modal-dialog__close:focus-visible {
+  outline: var(--neo-stroke-focus-ring-width) solid var(--focus--ring--default);
+  outline-offset: 2px;
+}
+
+.modal-dialog__close svg {
+  fill: var(--icon--base--default);
+  color: var(--icon--base--default);
+  width: var(--neo-icon-size-sm-rem);
+  height: var(--neo-icon-size-sm-rem);
+}
+
+.modal-dialog--info     .modal-dialog__header { background: var(--fill--semantic--info--soft); }
+.modal-dialog--success  .modal-dialog__header { background: var(--fill--semantic--success--soft); }
+.modal-dialog--warning  .modal-dialog__header { background: var(--fill--semantic--warning--soft); }
+.modal-dialog--error .modal-dialog__header { background: var(--fill--semantic--error--soft); }
+
+.modal-dialog--brand    .modal-dialog__title,
+.modal-dialog--info     .modal-dialog__title,
+.modal-dialog--success  .modal-dialog__title,
+.modal-dialog--warning  .modal-dialog__title,
+.modal-dialog--error    .modal-dialog__title { flex: none; }
+
+.modal-dialog--brand    .modal-dialog__title { color: var(--text--base--brand); }
+.modal-dialog--info     .modal-dialog__title { color: var(--text--semantic--info); }
+.modal-dialog--success  .modal-dialog__title { color: var(--text--semantic--success); }
+.modal-dialog--warning  .modal-dialog__title { color: var(--text--semantic--warning); }
+.modal-dialog--error .modal-dialog__title { color: var(--text--semantic--error); }
+
+.modal-dialog--info .modal-dialog__icon,
+.modal-dialog--success .modal-dialog__icon,
+.modal-dialog--warning .modal-dialog__icon,
+.modal-dialog--error .modal-dialog__icon {
+  width: var(--neo-icon-size-3xl-rem);
+  height: var(--neo-icon-size-3xl-rem);
+  flex: none;
+}
+
+.modal-dialog--brand .modal-dialog__icon {
+  width: var(--neo-icon-size-4xl-rem);
+  height: var(--neo-icon-size-4xl-rem);
+  flex: none;
+}
+
+.modal-dialog--brand    .modal-dialog__header,
+.modal-dialog--info     .modal-dialog__header,
+.modal-dialog--success  .modal-dialog__header,
+.modal-dialog--warning  .modal-dialog__header,
+.modal-dialog--error .modal-dialog__header {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--neo-space-2xl-rem) var(--modal-dialog-gutter) var(--neo-space-xl-rem);
+}
+
+.modal-dialog--brand .modal-dialog__header {
+  padding-bottom: var(--neo-space-md-rem);
+}
+
+.modal-dialog--info     .modal-dialog__header,
+.modal-dialog--success  .modal-dialog__header,
+.modal-dialog--warning  .modal-dialog__header,
+.modal-dialog--error .modal-dialog__header {
+  border-bottom-left-radius: 50% 14px;
+  border-bottom-right-radius: 50% 14px;
+}
+
+
+.modal-dialog__content {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--neo-space-lg-rem);
+  padding: var(--modal-dialog-content-top) var(--modal-dialog-gutter) var(--modal-dialog-content-bottom);
+}
+.modal-dialog__content:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 0 0 var(--neo-stroke-focus-ring-width) var(--focus--ring--default),
+    inset 0 0 0 calc(var(--neo-stroke-focus-ring-width) * 2) var(--focus--gap--default);
+}
+
+.modal-dialog__description {
+  margin: 0;
+  font-size: var(--neo-type-body-lg-regular-size-rem);
+  font-weight: var(--neo-type-body-lg-regular-weight);
+  line-height: var(--neo-type-body-lg-regular-line-height-rem);
+  color: var(--text--base--default);
+}
+
+.modal-dialog--brand    .modal-dialog__description,
+.modal-dialog--info     .modal-dialog__description,
+.modal-dialog--success  .modal-dialog__description,
+.modal-dialog--warning  .modal-dialog__description,
+.modal-dialog--error .modal-dialog__description {
+  text-align: center;
+}
+
+.modal-dialog__slot {
+  border-radius: var(--neo-radius-xs);
+}
+
+
+.modal-dialog__actions {
+  flex: none;
+  display: flex;
+  gap: var(--neo-space-md-rem);
+  padding: var(--neo-space-lg-rem) var(--modal-dialog-gutter) var(--modal-dialog-gutter);
+}
+
+.modal-dialog--xs .modal-dialog__actions {
+  flex-direction: column;
+}
+.modal-dialog--xs .modal-dialog__actions > .btn {
+  width: 100%;
+}
+.modal-dialog--sm .modal-dialog__actions,
+.modal-dialog--md .modal-dialog__actions,
+.modal-dialog--lg .modal-dialog__actions {
+  justify-content: flex-end;
+}

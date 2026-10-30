@@ -1,0 +1,853 @@
+{
+  "system": {
+    "add": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "9f30750b"
+    },
+    "add-circle": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "1f32dd56"
+    },
+    "alarm": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "5cf4dda5"
+    },
+    "arrow-down": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "107113b5"
+    },
+    "arrow-left": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "c212e7ac"
+    },
+    "arrow-right": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "aeded428"
+    },
+    "arrow-up": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "65cd3947"
+    },
+    "bag": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "53143099"
+    },
+    "bell": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "acd046ca"
+    },
+    "bell-add": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "254301c1"
+    },
+    "bell-block": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "f57f93e0"
+    },
+    "bell-off": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "f457796f"
+    },
+    "bell-ring": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "bedbb53d"
+    },
+    "bookmark": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "fcc5e5b9"
+    },
+    "calendar": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "3558daa3"
+    },
+    "calendar-add": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "c3870090"
+    },
+    "call-incoming": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "c280491e"
+    },
+    "call-incoming-alt": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "ea84505e"
+    },
+    "cart": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "806360de"
+    },
+    "cart-add": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "cc79e376"
+    },
+    "cart-check": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "f84dc6cd"
+    },
+    "chart-down": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "77231c8e"
+    },
+    "chat": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "12868994"
+    },
+    "chat-typing": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "a2ebc517"
+    },
+    "check": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "d3bd2b1b"
+    },
+    "check-box": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "da6d1512"
+    },
+    "checklist": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "56d2d25b"
+    },
+    "chevron-down": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "579da94e"
+    },
+    "chevron-left": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "2db4df10"
+    },
+    "chevron-right": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "95ce971c"
+    },
+    "chevron-up": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "dc5484c1"
+    },
+    "clipboard-add": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "1cb5a84e"
+    },
+    "clipboard-check": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "03f55af9"
+    },
+    "clipboard-remove": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "d77313f5"
+    },
+    "clock": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "e96e38a8"
+    },
+    "close": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "55d4c541"
+    },
+    "cloud": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "967463e2"
+    },
+    "cloud-add": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "b5e6d4c0"
+    },
+    "cloud-alert": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "6ffd99c0"
+    },
+    "cloud-block": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "f452b0ae"
+    },
+    "cloud-check": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "81c59ec8"
+    },
+    "cloud-refresh": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "30b4eee0"
+    },
+    "cloud-share": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "3b2f2640"
+    },
+    "cloud-transfer": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "5644925f"
+    },
+    "cloud-video": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "e559c291"
+    },
+    "coin": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "1a1f19b1"
+    },
+    "compass": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "a6b7f973"
+    },
+    "copy": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "380636ec"
+    },
+    "credit-card": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "e2e9a37a"
+    },
+    "dictionary": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "066fa688"
+    },
+    "download": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "a4e0928a"
+    },
+    "edit": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "188d5696"
+    },
+    "ellipsis": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "14c093f0"
+    },
+    "error": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "4d283d6c"
+    },
+    "eye": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "af190770"
+    },
+    "eye-off": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "21d9efe9"
+    },
+    "gift": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "8c698cde"
+    },
+    "heart": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "ad76ea85"
+    },
+    "heart-off": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "028c5bbb"
+    },
+    "help": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "3d20df81"
+    },
+    "home": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "346c7730"
+    },
+    "image": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "5200fe73"
+    },
+    "inbox": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "bcf32b02"
+    },
+    "info": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "eb6d43cd"
+    },
+    "kebab": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "2d75262b"
+    },
+    "lightbulb": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "fc602f13"
+    },
+    "link": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "615b507b"
+    },
+    "link-broken": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "8ff0c6f9"
+    },
+    "list": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "39110dcd"
+    },
+    "location": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "15b9f6ff"
+    },
+    "lock": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "25c0d546"
+    },
+    "logout": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "9346cbc3"
+    },
+    "mail": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "c737e5ef"
+    },
+    "mail-send": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "5cd240bd"
+    },
+    "map": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "3f90c440"
+    },
+    "media-forward": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "1e8d5dd5"
+    },
+    "media-next": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "5da0a923"
+    },
+    "media-pause": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "e30bd4f7"
+    },
+    "media-play": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "66695b29"
+    },
+    "media-previous": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "ea3952e8"
+    },
+    "media-rewind": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "89c9c9c6"
+    },
+    "megaphone": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "14e4c21e"
+    },
+    "menu": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "3610f928"
+    },
+    "menu-dots": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "2009c4c5"
+    },
+    "minus": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "5c4e327a"
+    },
+    "mobile": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "b5a28089"
+    },
+    "nav-left": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "e71365aa"
+    },
+    "nav-right": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "c188f08b"
+    },
+    "navigate": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "06b07003"
+    },
+    "navigate-off": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "35021a36"
+    },
+    "outbox": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "6488682a"
+    },
+    "paperclip": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "ba4022df"
+    },
+    "phone": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "276c9b1b"
+    },
+    "referral-out": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "5558f978"
+    },
+    "restroom": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "3c2a5430"
+    },
+    "restroom-women": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "de30fca4"
+    },
+    "scanner": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "72e0730f"
+    },
+    "search": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "90c142dd"
+    },
+    "search-circle": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "6c623fdc"
+    },
+    "settings": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "1baac484"
+    },
+    "shield": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "57cd739b"
+    },
+    "shield-check": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "273ff89e"
+    },
+    "sidebar-close": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "6ec9201d"
+    },
+    "sidebar-open": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "02418df7"
+    },
+    "signal": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "b19842b5"
+    },
+    "star": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "c3cabd2a"
+    },
+    "support": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "f9040622"
+    },
+    "sync-alert": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "f015abda"
+    },
+    "trash": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "d5a020e0"
+    },
+    "user-add": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "048dd903"
+    },
+    "user-check": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "bc99ed10"
+    },
+    "user-circle": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "476498be"
+    },
+    "user-id": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "1f14a1fe"
+    },
+    "user-profile": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "f7ece6e9"
+    },
+    "user-shield": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "26d7a019"
+    },
+    "voicemail": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "0dbc21dc"
+    },
+    "voicemail-off": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "b6e973c1"
+    },
+    "volume-down": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "b6ee7d4b"
+    },
+    "volume-high": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "04034273"
+    },
+    "volume-low": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "1de9450a"
+    },
+    "volume-mute": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "11ce8afd"
+    },
+    "volume-off": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "9abcc476"
+    },
+    "wallet": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "54d6ae51"
+    },
+    "warning": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "43807677"
+    },
+    "wheelchair": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "8c02a836"
+    },
+    "wifi": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "5c7dc2bc"
+    },
+    "wifi-off": {
+      "viewBox": "0 0 24 24",
+      "color": "currentColor",
+      "hash": "5c5762ed"
+    }
+  },
+  "semantic": {
+    "alert": {
+      "viewBox": "0 0 24 24",
+      "color": "token",
+      "hash": "1c85c91c"
+    },
+    "alert-inverse": {
+      "viewBox": "0 0 24 24",
+      "color": "token",
+      "hash": "397d2d1b"
+    },
+    "error": {
+      "viewBox": "0 0 24 24",
+      "color": "token",
+      "hash": "6e735ba7"
+    },
+    "error-inverse": {
+      "viewBox": "0 0 24 24",
+      "color": "token",
+      "hash": "758d2449"
+    },
+    "info": {
+      "viewBox": "0 0 24 24",
+      "color": "token",
+      "hash": "f4a8a4db"
+    },
+    "info-inverse": {
+      "viewBox": "0 0 24 24",
+      "color": "token",
+      "hash": "fb9a70cc"
+    },
+    "success": {
+      "viewBox": "0 0 24 24",
+      "color": "token",
+      "hash": "7e74c507"
+    },
+    "success-inverse": {
+      "viewBox": "0 0 24 24",
+      "color": "token",
+      "hash": "3e19a654"
+    },
+    "warning": {
+      "viewBox": "0 0 24 24",
+      "color": "token",
+      "hash": "155f2107"
+    },
+    "warning-inverse": {
+      "viewBox": "0 0 24 24",
+      "color": "token",
+      "hash": "0eb60bb0"
+    }
+  },
+  "brand": {
+    "ambulance": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "7047c52d"
+    },
+    "ball": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "08e5cc08"
+    },
+    "blood-donation": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "76fdb1a2"
+    },
+    "blood-drop": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "72513f91"
+    },
+    "call-center": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "898ff93a"
+    },
+    "capsule": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "368c30e4"
+    },
+    "checkup": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "8903d964"
+    },
+    "contact": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "8ad51945"
+    },
+    "conversation": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "bba3f5c0"
+    },
+    "credit-card": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "a1558f50"
+    },
+    "cross": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "2a060a3e"
+    },
+    "desktop": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "7ac3f819"
+    },
+    "ear": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "931b128b"
+    },
+    "eye": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "77d96497"
+    },
+    "health": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "35aa0c60"
+    },
+    "heart-rate": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "ea4c1c81"
+    },
+    "hospital": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "4fe714b1"
+    },
+    "hospital-symbol": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "442ecb0f"
+    },
+    "insurance": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "c69169a5"
+    },
+    "mask": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "c3adab7c"
+    },
+    "medical-bag": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "048cae25"
+    },
+    "medical-record": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "7ed02ebf"
+    },
+    "money": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "202beb6f"
+    },
+    "nurse": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "422cac5a"
+    },
+    "nurse-cap": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "71c281ef"
+    },
+    "sparkles": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "857ef2cf"
+    },
+    "stethoscope": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "4409a2b5"
+    },
+    "telemedicine": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "84b8b089"
+    },
+    "tooth": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "ea31b82e"
+    },
+    "warranty": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "6b9902b8"
+    },
+    "wellness": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "4e1aa40e"
+    },
+    "wheelchair": {
+      "viewBox": "0 0 24 24",
+      "color": "multicolor",
+      "hash": "8c438641"
+    }
+  }
+}
