@@ -1,0 +1,58 @@
+'use client';
+// packages/mui/ui/Combobox.mjs — emitted without comments. The reasoning behind each decision lives in Neo's source repository.
+import React from 'react';
+import { FormControl, FormLabel, Autocomplete, TextField, FormHelperText, InputAdornment } from '@mui/material';
+import { useId } from './_use-id.mjs';
+import { renderIcon } from './_icon.mjs';
+import { helpIcon } from './_help.mjs';
+import { useKeyboardFocus } from './_keyboard-focus.mjs';
+import { hasAccessibleName } from './_warn.mjs';
+const h = React.createElement;
+
+export const NeoCombobox = React.forwardRef(function NeoCombobox({ label, required = false, helperText, error = false, readOnly = false, disabled = false, tooltip, description, mark, iconLeft, iconRight, tooltipLabel, id, placeholder, options = [], onChange, ...rest }, ref) {
+  const autoId = useId();
+  const fieldId = id || autoId;
+  const helpId = helperText && fieldId ? `${fieldId}-helper` : undefined;
+  const descriptionId = description && fieldId ? `${fieldId}-description` : undefined;
+  const labelId = label && fieldId ? `${fieldId}-label` : undefined;
+  hasAccessibleName('NeoCombobox', label, rest);
+  const keyboardFocus = useKeyboardFocus();
+  const helpNode = helpIcon({ text: tooltip, name: tooltipLabel, label, comp: 'Combobox', prefix: 'combobox' });
+  const { className, style, sx, ...toControl } = rest;
+  const cola = typeof label === 'string' && helpNode ? /^(?:(.*\S)\s+)?(\S+)\s*$/.exec(label) : null;
+  const labelTailId = cola && labelId ? `${labelId}-tail` : undefined;
+  const labelIds = labelTailId ? (cola[1] ? `${labelId} ${labelTailId}` : labelTailId) : labelId;
+  const labelNode = !label ? null : cola
+    ? [cola[1] ? h(FormLabel, { key: 'c', id: labelId, htmlFor: fieldId, required: false }, `${cola[1]} `) : null,
+      h('span', { key: 't', className: 'combobox__label-tail' }, h(FormLabel, { id: labelTailId, htmlFor: fieldId }, cola[2]), helpNode)]
+    : h(FormLabel, { id: labelId, htmlFor: fieldId }, label);
+  const labelRow = label && helpNode ? h('div', { className: 'combobox__label-row' }, ...(cola ? labelNode : [labelNode, helpNode])) : labelNode;
+  return h(FormControl, { error, disabled, required, fullWidth: true, variant: 'outlined', onFocus: keyboardFocus.onFocus, onBlur: keyboardFocus.onBlur, onPointerDown: keyboardFocus.onPointerDown, ref, className, style, sx },
+    (description || mark)
+      ? h('div', { className: 'combobox__header' + (description ? ' combobox__header--description' : '') },
+        labelRow,
+        description ? h('span', { id: descriptionId, className: 'combobox__description' }, description) : null,
+        mark ? h('span', { className: 'combobox__mark' }, mark) : null)
+      : labelRow,
+    h(Autocomplete, {
+      id: fieldId, fullWidth: true, options, disabled, readOnly,
+      clearIcon: renderIcon('system-error'),
+      onChange,
+      renderInput: (params) => h(TextField, {
+        ...params, placeholder, error, disabled, required,
+        inputProps: { ...params.inputProps, 'aria-describedby': [descriptionId, helpId, rest['aria-describedby']].filter(Boolean).join(' ') || undefined },
+        InputProps: {
+          ...params.InputProps,
+          className: [params.InputProps.className, keyboardFocus.active ? 'field--focus' : null].filter(Boolean).join(' '),
+          readOnly,
+          startAdornment: iconLeft ? h(React.Fragment, null, h(InputAdornment, { position: 'start' }, renderIcon(iconLeft, 'combobox__icon')), params.InputProps.startAdornment) : params.InputProps.startAdornment,
+          endAdornment: iconRight ? h(React.Fragment, null, h(InputAdornment, { position: 'end' }, renderIcon(iconRight, 'combobox__icon')), params.InputProps.endAdornment) : params.InputProps.endAdornment,
+        },
+      }),
+      ...toControl,
+      ...(labelTailId ? { ListboxProps: { ...rest.ListboxProps, 'aria-labelledby': labelIds } } : {}),
+      'aria-describedby': undefined,
+    }),
+    helperText ? h(FormHelperText, { id: helpId, key: error ? 'error' : 'helper', role: error ? 'alert' : undefined }, helperText) : null,
+  );
+});
