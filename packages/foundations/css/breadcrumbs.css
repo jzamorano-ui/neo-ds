@@ -1,0 +1,100 @@
+/* packages/foundations/css/breadcrumbs.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+.breadcrumbs {
+  color: var(--text--base--secondary);
+  font-size: var(--neo-type-body-md-regular-size-rem);
+  font-weight: var(--neo-type-body-md-regular-weight);
+  line-height: var(--neo-type-body-md-regular-line-height-rem);
+}
+
+.breadcrumbs__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--neo-space-xs-rem);
+  min-height: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumbs__separator {
+  display: inline-flex;
+  align-items: center;
+}
+
+.breadcrumbs .breadcrumbs__level {
+  color: var(--text--base--secondary);
+  font-size: inherit;
+  font-weight: var(--neo-type-body-md-regular-weight);
+  line-height: inherit;
+}
+
+.breadcrumbs__separator svg {
+  width: var(--neo-icon-size-sm-rem);
+  height: var(--neo-icon-size-sm-rem);
+  color: var(--icon--base--default);
+}
+
+.breadcrumbs__collapsed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: var(--neo-space-xs-rem);
+  border: 0;
+  border-radius: var(--neo-radius-xs);
+  background-color: var(--fill--base--transparent);
+  color: var(--icon--base--default);
+  cursor: pointer;
+}
+
+.breadcrumbs__collapsed svg {
+  width: var(--neo-icon-size-xs-rem);
+  height: var(--neo-icon-size-xs-rem);
+}
+
+@media (hover: hover) {
+  .breadcrumbs__collapsed:hover {
+    background-color: var(--fill--base--medium);
+  }
+}
+
+.breadcrumbs__collapsed:focus-visible {
+  outline: var(--neo-stroke-focus-ring-width) solid var(--focus--ring--default);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 var(--neo-stroke-focus-ring-width) var(--focus--gap--default);
+}
+
+.breadcrumbs__current {
+  color: var(--text--base--default);
+  font-weight: var(--neo-type-body-md-medium-weight);
+}
+
+.breadcrumbs[data-surface="inverse"],
+.breadcrumbs[data-surface="inverse"] .breadcrumbs__level,
+.breadcrumbs[data-surface="inverse"] .breadcrumbs__current {
+  color: var(--text--base--contrast);
+}
+
+.breadcrumbs[data-surface="inverse"] .breadcrumbs__separator svg {
+  color: var(--icon--base--contrast);
+}
+
+.breadcrumbs[data-surface="inverse"] .breadcrumbs__collapsed {
+  background-color: var(--fill--tertiary--inverse--default);
+  color: var(--icon--base--contrast);
+}
+
+@media (hover: hover) {
+  .breadcrumbs[data-surface="inverse"] .breadcrumbs__collapsed:hover {
+    background-color: var(--fill--tertiary--inverse--hover);
+  }
+}
+
+.breadcrumbs[data-surface="inverse"] .breadcrumbs__level:focus-visible,
+.breadcrumbs[data-surface="inverse"] .breadcrumbs__collapsed:focus-visible {
+  outline-color: var(--focus--ring--inverse);
+  box-shadow: 0 0 0 var(--neo-stroke-focus-ring-width) var(--focus--gap--inverse);
+}

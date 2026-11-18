@@ -1,0 +1,38 @@
+/* packages/foundations/css/tag.css — emitted without comments. The reasoning behind each decision lives in Neo's source repository. */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--neo-space-xs-rem);
+  padding-inline: var(--neo-space-sm-rem);
+  padding-block: var(--neo-space-xs-rem);
+  background: var(--fill--base--light);
+  border: var(--neo-stroke-xs) solid var(--border--base--default);
+  border-radius: var(--neo-radius-xs);
+  font-size: var(--neo-type-body-md-medium-size-rem);
+  font-weight: var(--neo-type-body-md-medium-weight);
+  line-height: var(--neo-type-body-md-medium-line-height-rem);
+  color: var(--text--base--secondary);
+  white-space: nowrap;
+}
+
+.tag svg,
+.tag [aria-hidden="true"] {
+  flex-shrink: 0;
+  fill: var(--icon--base--secondary);
+  color: var(--icon--base--secondary);
+  width: var(--neo-icon-size-sm-rem);
+  height: var(--neo-icon-size-sm-rem);
+}
+
+.tag--solid {
+  background: var(--fill--base--inverse);
+  border-color: var(--fill--base--inverse);
+  color: var(--text--base--contrast);
+}
+
+.tag--solid svg,
+.tag--solid [aria-hidden="true"] {
+  fill: var(--icon--base--contrast);
+  color: var(--icon--base--contrast);
+}

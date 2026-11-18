@@ -1,0 +1,36 @@
+'use client';
+// packages/mui/ui/Checkbox.mjs — emitted without comments. The reasoning behind each decision lives in Neo's source repository.
+import React from 'react';
+import { FormControlLabel, Checkbox } from '@mui/material';
+import { useId } from './_use-id.mjs';
+import { splitAria } from './_aria.mjs';
+import { innerInputProps } from './_inner-input.mjs';
+import { hasAccessibleName } from './_warn.mjs';
+const h = React.createElement;
+
+export const NeoCheckbox = React.forwardRef(function NeoCheckbox({ label, checked, defaultChecked, indeterminate = false, disabled, onChange, id, hideLabel = false, ...props }, ref) {
+  const autoId = useId();
+  const fieldId = id || autoId;
+  const { inputRef, ...rest } = props;
+  hasAccessibleName('NeoCheckbox', label, rest);
+  const nodo = React.useRef(null);
+  React.useEffect(() => { if (nodo.current) nodo.current.indeterminate = indeterminate; }, [indeterminate]);
+  const alNodo = React.useCallback((n) => {
+    nodo.current = n;
+    if (typeof inputRef === 'function') inputRef(n); else if (inputRef) inputRef.current = n;
+  }, [inputRef]);
+  const { className, style, sx, inputProps, ...others } = rest;
+  const [consumerAria, toControl] = splitAria(others);
+  return h(FormControlLabel, {
+    ref,
+    htmlFor: fieldId, label, className: [hideLabel ? 'neo-label-hidden' : null, className].filter(Boolean).join(' ') || undefined, style, sx,
+    control: h(Checkbox, {
+      id: fieldId, indeterminate, disabled, inputRef: alNodo,
+      ...(checked !== undefined ? { checked } : {}),
+      ...(defaultChecked !== undefined ? { defaultChecked } : {}),
+      onChange,
+      ...toControl,
+      ...innerInputProps(consumerAria, inputProps, toControl.slotProps),
+    }),
+  });
+});
